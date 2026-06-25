@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.build/
+coverage/
+.venv/
+.pytest_tmp/
+.DS_Store
