@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <LocalizedText>
+        <Replace Tag="LOC_HTIMELINE_MOD_NAME" Language="zh_Hans_CN"><Text>历史与排名</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MOD_DESC" Language="zh_Hans_CN"><Text>讲述每个文明跨越时代的故事：每位领袖曾是谁、帝国如何扩张、自动生成的编年史，以及记住并比较过往对局的存档。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TAB" Language="zh_Hans_CN"><Text>历史时间线</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TITLE" Language="zh_Hans_CN"><Text>历史与排名</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MENU" Language="zh_Hans_CN"><Text>历史时间线</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_OPEN" Language="zh_Hans_CN"><Text>打开历史时间线</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_EMPTY" Language="zh_Hans_CN"><Text>尚无历史记录 —— 请先进行几个回合。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TURN_RANGE" Language="zh_Hans_CN"><Text>回合 {1_A}–{2_B}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TURN_N" Language="zh_Hans_CN"><Text>回合 {1_T}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_LED" Language="zh_Hans_CN"><Text>{1_Leader} 领导了 {2_Civ}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_RIBBON" Language="zh_Hans_CN"><Text>谱系</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_RIBBON_T" Language="zh_Hans_CN"><Text>各时代每位领袖的文明。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_CHRONICLE" Language="zh_Hans_CN"><Text>编年史</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_CHRONICLE_T" Language="zh_Hans_CN"><Text>自动生成的对局叙事。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_MAP" Language="zh_Hans_CN"><Text>历史地图</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_MAP_T" Language="zh_Hans_CN"><Text>观看帝国的成长与变迁。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_ARCHIVE" Language="zh_Hans_CN"><Text>存档</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_ARCHIVE_T" Language="zh_Hans_CN"><Text>过往对局并排对比。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_BORN" Language="zh_Hans_CN"><Text>在{1_Age}，{2_Leader} 缔造了 {3_Civ} 民族。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_CHANGE" Language="zh_Hans_CN"><Text>{1_Age}破晓之时，民族从 {2_Prev} 蜕变为 {3_Civ}。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_LEAD" Language="zh_Hans_CN"><Text>他们跃居世界列强之首。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_END" Language="zh_Hans_CN"><Text>{1_Leader} 的血脉从历史中消逝。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MAP_RANK" Language="zh_Hans_CN"><Text>领土第 {1_R} 名</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARC_EMPTY" Language="zh_Hans_CN"><Text>暂无过往对局 —— 完成一局即可开始存档。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARC_HINT" Language="zh_Hans_CN"><Text>选择两局进行比较。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_VERDICT_OUT" Language="zh_Hans_CN"><Text>第{1_T}回合作为 {2_C} 被消灭</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_VERDICT_END" Language="zh_Hans_CN"><Text>作为 {2_C} 达到 {1_A}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SCORE" Language="zh_Hans_CN"><Text>得分</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_LAND" Language="zh_Hans_CN"><Text>领土</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MENU_RANKINGS" Language="zh_Hans_CN"><Text>历史与排名</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_TITLE" Language="zh_Hans_CN"><Text>文明排行榜</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_PODIUM" Language="zh_Hans_CN"><Text>最佳对局</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_NOTE" Language="zh_Hans_CN"><Text>你的过往对局按综合得分排名 —— 最终得分结合你所掌控的领土加权。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_OPEN_HINT" Language="zh_Hans_CN"><Text>选择一局即可打开其谱系、编年史与动态地图。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS" Language="zh_Hans_CN"><Text>状态</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_DATE" Language="zh_Hans_CN"><Text>日期</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_OVERALL" Language="zh_Hans_CN"><Text>综合</Text></Replace>
+        <Row Tag="LOC_HTIMELINE_WORLD_LEADER"><Text>世界领袖</Text></Row>
+        <Replace Tag="LOC_HTIMELINE_RESULT" Language="zh_Hans_CN"><Text>结果</Text></Replace>
+    </LocalizedText>
+</Database>

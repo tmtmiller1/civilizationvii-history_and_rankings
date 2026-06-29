@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <LocalizedText>
+        <Replace Tag="LOC_HTIMELINE_MOD_NAME" Language="ru_RU"><Text>История и рейтинг</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MOD_DESC" Language="ru_RU"><Text>Рассказывает историю каждой цивилизации сквозь эпохи: кем был каждый лидер, как расширялись империи, генерируемую летопись и архив, который помнит и сравнивает прошлые игры.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TAB" Language="ru_RU"><Text>Историческая хронология</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TITLE" Language="ru_RU"><Text>История и рейтинг</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MENU" Language="ru_RU"><Text>Историческая хронология</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_OPEN" Language="ru_RU"><Text>Открыть историческую хронологию</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_EMPTY" Language="ru_RU"><Text>История пока пуста — сыграйте несколько ходов.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TURN_RANGE" Language="ru_RU"><Text>Ходы {1_A}–{2_B}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TURN_N" Language="ru_RU"><Text>Ход {1_T}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_LED" Language="ru_RU"><Text>{1_Leader} вёл {2_Civ}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_RIBBON" Language="ru_RU"><Text>Родословная</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_RIBBON_T" Language="ru_RU"><Text>Цивилизация каждого лидера во все эпохи.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_CHRONICLE" Language="ru_RU"><Text>Летопись</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_CHRONICLE_T" Language="ru_RU"><Text>Сгенерированный рассказ об игре.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_MAP" Language="ru_RU"><Text>Историческая карта</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_MAP_T" Language="ru_RU"><Text>Смотрите, как растут и меняются империи.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_ARCHIVE" Language="ru_RU"><Text>Архив</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_ARCHIVE_T" Language="ru_RU"><Text>Прошлые игры рядом.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_BORN" Language="ru_RU"><Text>В {1_Age} {2_Leader} создал народ {3_Civ}.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_CHANGE" Language="ru_RU"><Text>На заре {1_Age} народ переродился из {2_Prev} в {3_Civ}.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_LEAD" Language="ru_RU"><Text>Они стали первыми среди мировых держав.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_END" Language="ru_RU"><Text>Род {1_Leader} исчез из истории.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MAP_RANK" Language="ru_RU"><Text>№{1_R} по территории</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARC_EMPTY" Language="ru_RU"><Text>Прошлых игр пока нет — завершите игру, чтобы начать архив.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARC_HINT" Language="ru_RU"><Text>Выберите две игры для сравнения.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_VERDICT_OUT" Language="ru_RU"><Text>Уничтожен Х{1_T} как {2_C}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_VERDICT_END" Language="ru_RU"><Text>Достиг {1_A} как {2_C}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SCORE" Language="ru_RU"><Text>Очки</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_LAND" Language="ru_RU"><Text>Территория</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MENU_RANKINGS" Language="ru_RU"><Text>История и рейтинг</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_TITLE" Language="ru_RU"><Text>Рейтинг цивилизаций</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_PODIUM" Language="ru_RU"><Text>Лучшие игры</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_NOTE" Language="ru_RU"><Text>Ваши прошлые игры по общему счёту — итоговый счёт с учётом удержанной территории.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_OPEN_HINT" Language="ru_RU"><Text>Выберите игру, чтобы открыть её родословную, летопись и живую карту.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS" Language="ru_RU"><Text>Статус</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_DATE" Language="ru_RU"><Text>Дата</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_OVERALL" Language="ru_RU"><Text>Итог</Text></Replace>
+        <Row Tag="LOC_HTIMELINE_WORLD_LEADER"><Text>Мировой лидер</Text></Row>
+        <Replace Tag="LOC_HTIMELINE_RESULT" Language="ru_RU"><Text>Результат</Text></Replace>
+    </LocalizedText>
+</Database>

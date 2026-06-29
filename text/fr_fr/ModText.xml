@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <LocalizedText>
+        <Replace Tag="LOC_HTIMELINE_MOD_NAME" Language="fr_FR"><Text>Histoire et classements</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MOD_DESC" Language="fr_FR"><Text>Raconte l'histoire de chaque civilisation à travers les âges : qui était chaque dirigeant, comment les empires se sont étendus, une chronique générée et une archive qui mémorise et compare les parties passées.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TAB" Language="fr_FR"><Text>Chronologie historique</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TITLE" Language="fr_FR"><Text>Histoire et classements</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MENU" Language="fr_FR"><Text>Chronologie historique</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_OPEN" Language="fr_FR"><Text>Ouvrir la chronologie historique</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_EMPTY" Language="fr_FR"><Text>Aucun historique — jouez quelques tours.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TURN_RANGE" Language="fr_FR"><Text>Tours {1_A}–{2_B}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TURN_N" Language="fr_FR"><Text>Tour {1_T}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_LED" Language="fr_FR"><Text>{1_Leader} dirigeait {2_Civ}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_RIBBON" Language="fr_FR"><Text>Lignée</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_RIBBON_T" Language="fr_FR"><Text>La civilisation de chaque dirigeant à chaque ère.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_CHRONICLE" Language="fr_FR"><Text>Chronique</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_CHRONICLE_T" Language="fr_FR"><Text>Un récit généré de la partie.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_MAP" Language="fr_FR"><Text>Carte historique</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_MAP_T" Language="fr_FR"><Text>Regardez les empires grandir et changer.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_ARCHIVE" Language="fr_FR"><Text>Archives</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_ARCHIVE_T" Language="fr_FR"><Text>Parties passées, côte à côte.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_BORN" Language="fr_FR"><Text>À l'{1_Age}, {2_Leader} forgea le peuple {3_Civ}.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_CHANGE" Language="fr_FR"><Text>À l'aube de l'{1_Age}, le peuple se transforma de {2_Prev} en {3_Civ}.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_LEAD" Language="fr_FR"><Text>Ils s'élevèrent au premier rang des puissances du monde.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_END" Language="fr_FR"><Text>La lignée de {1_Leader} disparut de l'histoire.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MAP_RANK" Language="fr_FR"><Text>N°{1_R} par territoire</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARC_EMPTY" Language="fr_FR"><Text>Aucune partie passée — terminez une partie pour créer une archive.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARC_HINT" Language="fr_FR"><Text>Choisissez deux parties à comparer.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_VERDICT_OUT" Language="fr_FR"><Text>Éliminé T{1_T} en tant que {2_C}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_VERDICT_END" Language="fr_FR"><Text>Atteint {1_A} en tant que {2_C}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SCORE" Language="fr_FR"><Text>Score</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_LAND" Language="fr_FR"><Text>Territoire</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MENU_RANKINGS" Language="fr_FR"><Text>Histoire et classements</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_TITLE" Language="fr_FR"><Text>Classement des civilisations</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_PODIUM" Language="fr_FR"><Text>Meilleures parties</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_NOTE" Language="fr_FR"><Text>Vos parties passées classées par score global — le score final pondéré par le territoire que vous avez tenu.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_OPEN_HINT" Language="fr_FR"><Text>Sélectionnez une partie pour ouvrir sa lignée, sa chronique et sa carte vivante.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS" Language="fr_FR"><Text>Statut</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_DATE" Language="fr_FR"><Text>Date</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_OVERALL" Language="fr_FR"><Text>Global</Text></Replace>
+        <Row Tag="LOC_HTIMELINE_WORLD_LEADER"><Text>Dirigeant mondial</Text></Row>
+        <Replace Tag="LOC_HTIMELINE_RESULT" Language="fr_FR"><Text>Résultat</Text></Replace>
+    </LocalizedText>
+</Database>

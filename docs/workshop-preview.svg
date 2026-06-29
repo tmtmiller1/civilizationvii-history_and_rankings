@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#243042"/>
+      <stop offset="100%" stop-color="#121821"/>
+    </linearGradient>
+    <linearGradient id="parchment" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f7eed1"/>
+      <stop offset="100%" stop-color="#e7d4a3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <!-- Gold frame to echo the in-game parchment/gold palette -->
+  <rect x="26" y="26" width="972" height="972" rx="30" fill="none" stroke="#c9a24c" stroke-width="4" opacity="0.5"/>
+
+  <!-- Wordmark (above the logo) -->
+  <text x="512" y="178" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif" font-size="64"
+        font-weight="bold" fill="#e7d4a3" letter-spacing="1">HISTORY &amp; RANKINGS</text>
+
+  <!-- Mod logo: a winners' podium (rankings) standing on a row of map hexes
+       (the historical map), parchment-on-gold to match the Demographics and
+       Emigration cards. Drawn in a ~64-unit box scaled up and centered. -->
+  <g transform="translate(192,250) scale(10)">
+    <g fill="url(#parchment)" stroke="#c9a24c" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+      <!-- Row of hexes (spaced, non-overlapping): the world map -->
+      <polygon points="2.75,54 4.875,50.32 9.125,50.32 11.25,54 9.125,57.68 4.875,57.68"/>
+      <polygon points="12.75,54 14.875,50.32 19.125,50.32 21.25,54 19.125,57.68 14.875,57.68"/>
+      <polygon points="22.75,54 24.875,50.32 29.125,50.32 31.25,54 29.125,57.68 24.875,57.68"/>
+      <polygon points="32.75,54 34.875,50.32 39.125,50.32 41.25,54 39.125,57.68 34.875,57.68"/>
+      <polygon points="42.75,54 44.875,50.32 49.125,50.32 51.25,54 49.125,57.68 44.875,57.68"/>
+      <polygon points="52.75,54 54.875,50.32 59.125,50.32 61.25,54 59.125,57.68 54.875,57.68"/>
+      <!-- Podium blocks (2nd / 1st / 3rd), bottoms resting on the hex row -->
+      <rect x="12" y="24" width="12" height="26" rx="1.5"/>
+      <rect x="26" y="14" width="12" height="36" rx="1.5"/>
+      <rect x="40" y="32" width="12" height="18" rx="1.5"/>
+    </g>
+    <!-- Rank numerals on the podium -->
+    <g fill="#9a6b2f" font-family="Georgia, 'Times New Roman', serif" font-weight="bold"
+       font-size="9" text-anchor="middle">
+      <text x="18" y="40">2</text>
+      <text x="32" y="30">1</text>
+      <text x="46" y="44">3</text>
+    </g>
+  </g>
+
+  <!-- Tagline: the mod's tabs (below the logo) -->
+  <text x="512" y="890" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif" font-size="34"
+        fill="#c9a24c" opacity="0.92">Rankings &#183; Historical Map &#183; Lineage &#183; Chronicle</text>
+</svg>

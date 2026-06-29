@@ -1,0 +1,203 @@
+/* htimeline.css — Historical Timeline mod styling.
+ *
+ * A warm, parchment-on-ink palette tuned to match Civ VII's shell: muted gold
+ * (#c9a24c) accents on a deep slate ground. rem-based so it tracks Interface
+ * Size; aspect-ratio + max-height media match the base game for laptops/4:3.
+ * All selectors are .htimeline-* scoped, so nothing leaks onto other mods. */
+
+/* Fill the screen (viewport-relative caps, NOT a rem cap that shrinks on big displays) —
+ * matches the emigration/demographics screens. The short-viewport media query below opens
+ * it further on laptops/4:3. */
+.htimeline-screen-frame { width: 96vw; height: 94vh; max-width: 96vw; max-height: 94vh; }
+.htimeline-detail-frame { width: 96vw; height: 94vh; max-width: 96vw; max-height: 94vh; }
+.htimeline-screen-host { min-height: 0; flex: 1 1 auto; display: flex; flex-direction: column; }
+
+/* ── shell: wrap + tab bar ─────────────────────────────────────────────── */
+.htimeline-wrap { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; gap: .6rem; }
+.htimeline-body { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; overflow: auto; }
+.htimeline-view-host { flex: 1 1 auto; min-height: 0; }
+
+.htimeline-tabs { display: flex; gap: .35rem; padding: .2rem 0 .5rem; border-bottom: .055rem solid rgba(201,162,76,.28); }
+.htimeline-tab {
+  background: transparent; color: #b9a574; border: .055rem solid transparent;
+  padding: .4rem 1.1rem; border-radius: .35rem; font-size: 1.15rem; letter-spacing: .03em;
+  text-transform: uppercase; cursor: pointer; transition: color .12s, background .12s;
+}
+.htimeline-tab:hover { color: #f0dcab; }
+.htimeline-tab.on { color: #1a140a; background: #c9a24c; }
+.htimeline-back { color: #c9a24c; margin-right: .75rem; border-color: rgba(201,162,76,.4); }
+.htimeline-back:hover { color: #1a140a; background: rgba(201,162,76,.85); }
+
+.htimeline-empty { color: #f0dcab; font-style: italic; font-size: 1.6rem; padding: 3rem; text-align: center; }
+
+/* ── ribbon (SVG) ──────────────────────────────────────────────────────── */
+.htimeline-ribbon-wrap { position: relative; width: 100%; }
+.htimeline-ribbon { font-family: inherit; display: block; }
+.htimeline-age-hdr { fill: #c9a24c; font-size: 15px; letter-spacing: .05em; text-transform: uppercase; }
+.htimeline-leader-lbl { fill: #e5d2ac; font-size: 14px; font-weight: 600; }
+.htimeline-seg { stroke: rgba(0,0,0,.4); stroke-width: 1; filter: drop-shadow(0 1px 2px rgba(0,0,0,.4)); }
+.htimeline-seg-lbl { fill: #0b0e14; font-size: 13px; font-weight: 700; pointer-events: none; }
+.htimeline-morph { fill: #e5d2ac; opacity: .85; }
+.htimeline-elim { fill: #d9534f; font-size: 18px; font-weight: 700; }
+
+/* ── tooltip ───────────────────────────────────────────────────────────── */
+.htimeline-tip {
+  position: absolute; pointer-events: none; background: rgba(8,10,16,.96);
+  border: .055rem solid rgba(201,162,76,.5); border-radius: .3rem; padding: .35rem .6rem;
+  font-size: .9rem; color: #e5d2ac; z-index: 60; transform: translate(-50%,-115%); max-width: 22rem;
+}
+.htimeline-tip-sw { display: inline-block; width: .55rem; height: .55rem; border-radius: 50%; margin-right: .3rem; vertical-align: middle; }
+
+/* ── chronicle ─────────────────────────────────────────────────────────── */
+.htimeline-chronicle { display: flex; flex-direction: column; gap: .6rem; }
+.htimeline-chron-card { background: rgba(20,24,33,.6); border-radius: .4rem; padding: .7rem 1rem; }
+.htimeline-chron-name { color: #f0dcab; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; margin-bottom: .25rem; }
+.htimeline-chron-prose { color: #d6c9ac; line-height: 1.45; }
+.htimeline-chron-rail { display: flex; gap: .3rem; margin-top: .5rem; }
+.htimeline-chron-dot { width: .55rem; height: .55rem; border-radius: 50%; background: #c9a24c; opacity: .6; cursor: pointer; }
+.htimeline-chron-dot:hover { opacity: 1; }
+
+/* ── historical map ───────────────────────────────────────────────────────
+ * The wrap grows to fill the window's body; the canvas is sized in JS (fitCanvas)
+ * to the largest aspect-correct rectangle that fits, then centered — so the map
+ * fills the screen on any resolution instead of sitting in a sliver up top. */
+.htimeline-map-wrap {
+  position: relative; flex: 1 1 auto; min-height: 0;
+  display: flex; align-items: center; justify-content: center; width: 100%;
+}
+.htimeline-map { display: block; border-radius: .4rem; background: radial-gradient(circle at 50% 40%, #1f3355, #0f1a2b); }
+
+/* ── scrubber ──────────────────────────────────────────────────────────── */
+.htimeline-time { display: flex; align-items: center; gap: .6rem; padding: .5rem 0; }
+.htimeline-play { background: #c9a24c; color: #1a140a; border: none; border-radius: 50%; width: 2rem; height: 2rem; cursor: pointer; font-size: 1rem; }
+.htimeline-range { flex: 1 1 auto; accent-color: #c9a24c; }
+.htimeline-time-lbl { color: #c9a24c; min-width: 6rem; font-size: .9rem; }
+.htimeline-speeds { display: flex; gap: .25rem; }
+.htimeline-speed { background: transparent; color: #b9a574; border: .055rem solid rgba(201,162,76,.4); border-radius: .25rem; padding: .15rem .5rem; cursor: pointer; }
+.htimeline-speed.on { background: #c9a24c; color: #1a140a; }
+
+/* ── archive + compare ─────────────────────────────────────────────────── */
+.htimeline-archive { display: flex; flex-direction: column; gap: .8rem; }
+.htimeline-arc-head { display: grid; grid-template-columns: 8rem 3rem 8rem 7rem 6rem 1fr 14rem; gap: .6rem; align-items: center; padding: .2rem .6rem .35rem; border-bottom: .055rem solid rgba(201,162,76,.26); }
+.htimeline-arc-head-cell { color: #a89a7a; font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; }
+.htimeline-arc-list { display: flex; flex-direction: column; gap: .25rem; }
+.htimeline-arc-row { display: grid; grid-template-columns: 8rem 3rem 8rem 7rem 6rem 1fr 14rem; gap: .6rem; align-items: center; padding: .42rem .6rem; border-radius: .3rem; cursor: pointer; }
+.htimeline-arc-row:hover { background: rgba(201,162,76,.12); }
+.htimeline-arc-row.on { background: rgba(201,162,76,.24); }
+.htimeline-arc-rank { color: #c9a24c; font-weight: 700; }
+.htimeline-arc-date { color: #e5d2ac; }
+.htimeline-arc-turns { color: #b9a574; }
+.htimeline-arc-score { color: #f0dcab; font-weight: 700; }
+.htimeline-arc-line { color: #d6c9ac; } .htimeline-arc-verdict { color: #c9a24c; }
+.htimeline-arc-cmp { display: flex; gap: 1rem; flex-wrap: wrap; }
+.htimeline-badge { display: inline-flex; align-items: center; padding: .12rem .5rem; border-radius: 999rem; font-size: .74rem; text-transform: uppercase; letter-spacing: .04em; font-weight: 700; }
+.htimeline-badge.is-completed { color: #0e1a12; background: #7fc78f; }
+.htimeline-badge.is-progress { color: #1e1708; background: #d2b15e; }
+.htimeline-cmp-card { flex: 1 1 18rem; background: rgba(20,24,33,.6); border-radius: .4rem; padding: .8rem; }
+.htimeline-cmp-title { color: #f0dcab; font-weight: 700; margin-bottom: .5rem; }
+.htimeline-cmp-lineage { display: flex; gap: .25rem; margin-bottom: .6rem; flex-wrap: wrap; }
+.htimeline-cmp-seg { color: #0b0e14; font-weight: 700; font-size: .8rem; padding: .15rem .5rem; border-radius: .25rem; }
+.htimeline-bar-row { display: flex; align-items: center; gap: .5rem; margin: .25rem 0; }
+.htimeline-bar-lbl { color: #b9a574; width: 4rem; font-size: .85rem; }
+.htimeline-bar-track { flex: 1 1 auto; height: .6rem; background: rgba(0,0,0,.4); border-radius: .3rem; }
+.htimeline-bar-fill { height: 100%; background: #c9a24c; border-radius: .3rem; }
+.htimeline-bar-val { color: #e5d2ac; width: 3.5rem; text-align: right; font-size: .85rem; }
+.htimeline-cmp-verdict { color: #c9a24c; margin-top: .5rem; font-style: italic; }
+
+.htimeline-shell-head { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; margin-bottom: .5rem; }
+.htimeline-shell-title { color: #f0dcab; font-weight: 700; }
+.htimeline-shell-stats { display: flex; flex-wrap: wrap; gap: .35rem; align-items: center; }
+.htimeline-shell-pill { display: inline-flex; align-items: center; padding: .14rem .55rem; border: .055rem solid rgba(201,162,76,.45); border-radius: 999rem; color: #d6c9ac; font-size: .78rem; }
+
+/* ── Civilization Rankings (leaderboard) ───────────────────────────────────── */
+.htimeline-rank-split { display: flex; gap: 1.2rem; flex: 1 1 auto; min-height: 0; }
+.htimeline-rank-left { flex: 0 0 22rem; display: flex; flex-direction: column; gap: .55rem; min-height: 0; }
+.htimeline-rank-right { flex: 1 1 auto; display: flex; flex-direction: column; gap: .4rem; min-width: 0; min-height: 0; }
+.htimeline-rank-section-title { color: #f0dcab; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; font-size: 1.05rem; }
+.htimeline-rank-note { color: #b9a574; font-style: italic; font-size: .82rem; line-height: 1.35; }
+
+.htimeline-rank-podium { display: flex; flex-direction: column; gap: .5rem; }
+.htimeline-rank-podium-card { background: rgba(20,24,33,.6); border: .08rem solid rgba(201,162,76,.45); border-radius: .45rem; padding: .55rem .7rem; cursor: pointer; display: flex; flex-direction: column; gap: .35rem; transition: background .12s; }
+.htimeline-rank-podium-card:hover { background: rgba(201,162,76,.14); }
+.htimeline-rank-podium-head { display: flex; align-items: center; gap: .5rem; }
+.htimeline-rank-podium-date { color: #e5d2ac; font-size: .85rem; }
+.htimeline-rank-podium-scorerow { display: flex; align-items: baseline; gap: .4rem; }
+.htimeline-rank-podium-score { color: #f0dcab; font-weight: 800; font-size: 1.3rem; }
+.htimeline-rank-podium-lbl { color: #a89a7a; font-size: .68rem; text-transform: uppercase; letter-spacing: .05em; }
+
+.htimeline-medal { width: 1.5rem; height: 1.5rem; border-radius: 999rem; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #1a140a; font-size: .82rem; box-shadow: inset 0 0 0 .055rem rgba(0,0,0,.35); }
+.htimeline-medal-1 { background: #e7c55b; }
+.htimeline-medal-2 { background: #c9ccd2; }
+.htimeline-medal-3 { background: #cd8a52; }
+
+.htimeline-rank-lineage { display: flex; flex-wrap: wrap; gap: .25rem; }
+.htimeline-rank-seg { color: #0b0e14; font-weight: 700; font-size: .74rem; padding: .1rem .42rem; border-radius: .25rem; }
+
+.htimeline-rank-bar { height: .4rem; background: rgba(0,0,0,.4); border-radius: .3rem; overflow: hidden; }
+.htimeline-rank-bar-fill { height: 100%; border-radius: .3rem; background: #c9a24c; }
+
+.htimeline-rank-list { display: flex; flex-direction: column; gap: .3rem; overflow: auto; min-height: 0; }
+.htimeline-rank-row { display: flex; align-items: center; gap: .7rem; padding: .45rem .65rem; border-left: .18rem solid rgba(201,162,76,.45); border-radius: .3rem; background: rgba(20,24,33,.35); cursor: pointer; transition: background .12s; }
+.htimeline-rank-row:hover { background: rgba(201,162,76,.12); }
+.htimeline-rank-num { color: #c9a24c; font-weight: 800; font-size: 1.1rem; width: 2.6rem; flex: 0 0 auto; }
+.htimeline-rank-mid { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: .22rem; }
+.htimeline-rank-row-top { display: flex; align-items: center; gap: .5rem; }
+.htimeline-rank-line { color: #e5d2ac; font-weight: 600; font-size: 1.02rem; }
+.htimeline-rank-meta { color: #b9a574; font-size: .88rem; }
+.htimeline-rank-score { color: #f0dcab; font-weight: 800; font-size: 1.2rem; width: 4rem; text-align: right; flex: 0 0 auto; }
+.htimeline-rank-leader { color: #f0dcab; font-weight: 700; font-size: 1.1rem; }
+.htimeline-rank-podium-leader { color: #f0dcab; font-weight: 700; font-size: 1.16rem; }
+.htimeline-rank-podium-meta { color: #b9a574; font-size: .76rem; }
+
+/* ── world-leader honorific (Civ V-style score title) ──────────────────────── */
+.htimeline-rank-worldleader { display: flex; align-items: baseline; gap: .4rem; }
+.htimeline-wl-lbl { color: #a89a7a; font-size: .64rem; text-transform: uppercase; letter-spacing: .06em; }
+.htimeline-wl-name { color: #d8b15a; font-weight: 700; font-style: italic; }
+.htimeline-rank-worldleader.is-podium { margin: .2rem 0 .15rem; }
+.htimeline-rank-worldleader.is-podium .htimeline-wl-name { font-size: 1.06rem; }
+.htimeline-rank-worldleader.is-row { margin: .12rem 0; }
+.htimeline-rank-worldleader.is-row .htimeline-wl-name { font-size: .94rem; }
+.htimeline-shell-pill-leader { color: #d8b15a; font-style: italic; }
+
+/* ── map legend (terrain key + civ colors) ─────────────────────────────────── */
+.htimeline-map-legend { display: flex; flex-direction: column; gap: .35rem; padding: .6rem .2rem .2rem; flex: 0 0 auto; }
+.htimeline-legend-row { display: flex; flex-wrap: wrap; gap: .35rem 1rem; }
+.htimeline-legend-item { display: flex; align-items: center; gap: .35rem; }
+.htimeline-legend-sw { width: .9rem; height: .9rem; border-radius: .2rem; border: .055rem solid rgba(0,0,0,.45); flex: 0 0 auto; }
+.htimeline-legend-lbl { color: #d6c9ac; font-size: .9rem; }
+
+@media (max-width: 72rem) {
+  .htimeline-arc-head, .htimeline-arc-row { grid-template-columns: 7rem 2.5rem 7rem 6rem 5rem 1fr; }
+  .htimeline-arc-verdict { display: none; }
+  .htimeline-rank-split { flex-direction: column; }
+  .htimeline-rank-left { flex: 0 0 auto; }
+}
+
+@media (max-height: 55.5555rem), (max-aspect-ratio: 3/2) {
+  .htimeline-screen-frame, .htimeline-detail-frame {
+    width: 98vw; height: 96vh; max-width: 98vw; max-height: 96vh;
+  }
+}
+
+/* Any-resolution scaling: on SHORT viewports the engine pins the root font, so the larger fonts +
+ * paddings above would crowd the column. Claw them back in steps (rem breakpoints track the engine's
+ * scaled root font), mirroring the emigration/demographics screens. */
+@media (max-height: 53.9rem) {
+  .htimeline-screen-body, .htimeline-detail-host { padding-left: 1rem; padding-right: 1rem; }
+  .htimeline-tab { font-size: 1rem; padding: .3rem .8rem; }
+  .htimeline-rank-section-title { font-size: .95rem; }
+  .htimeline-rank-leader, .htimeline-rank-podium-leader { font-size: 1rem; }
+  .htimeline-rank-meta { font-size: .8rem; }
+  .htimeline-rank-score { font-size: 1.05rem; }
+  .htimeline-rank-row { padding: .35rem .55rem; }
+  .htimeline-rank-podium-card { padding: .45rem .6rem; }
+  .htimeline-legend-lbl { font-size: .82rem; }
+}
+@media (max-height: 43.9rem) {
+  .htimeline-screen-body, .htimeline-detail-host { padding-left: .7rem; padding-right: .7rem; }
+  .htimeline-tab { font-size: .9rem; padding: .25rem .6rem; }
+  .htimeline-rank-leader, .htimeline-rank-podium-leader { font-size: .92rem; }
+  .htimeline-rank-meta, .htimeline-legend-lbl { font-size: .74rem; }
+  .htimeline-rank-score { font-size: .98rem; }
+  .htimeline-rank-row { padding: .28rem .45rem; gap: .5rem; }
+}

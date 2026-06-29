@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <EnglishText>
+        <Row Tag="LOC_HTIMELINE_MOD_NAME"><Text>History &amp; Rankings</Text></Row>
+        <Row Tag="LOC_HTIMELINE_MOD_DESC"><Text>Tells the story of every civilization across the ages — who each leader was, how empires spread, a generated chronicle, and an archive that remembers and compares past games.</Text></Row>
+        <Row Tag="LOC_HTIMELINE_TAB"><Text>Historical Timeline</Text></Row>
+        <Row Tag="LOC_HTIMELINE_TITLE"><Text>History &amp; Rankings</Text></Row>
+        <Row Tag="LOC_HTIMELINE_MENU"><Text>Historical Timeline</Text></Row>
+        <Row Tag="LOC_HTIMELINE_MENU_RANKINGS"><Text>History &amp; Rankings</Text></Row>
+        <Row Tag="LOC_HTIMELINE_OPEN"><Text>Open the Historical Timeline</Text></Row>
+        <Row Tag="LOC_HTIMELINE_EMPTY"><Text>No history captured yet — play a few turns.</Text></Row>
+        <Row Tag="LOC_HTIMELINE_TURN_RANGE"><Text>Turns {1_A}–{2_B}</Text></Row>
+        <Row Tag="LOC_HTIMELINE_TURN_N"><Text>Turn {1_T}</Text></Row>
+        <Row Tag="LOC_HTIMELINE_LED"><Text>{1_Leader} led {2_Civ}</Text></Row>
+        <Row Tag="LOC_HTIMELINE_SUB_RIBBON"><Text>Lineage</Text></Row>
+        <Row Tag="LOC_HTIMELINE_SUB_RIBBON_T"><Text>Each leader's civilization across every age.</Text></Row>
+        <Row Tag="LOC_HTIMELINE_SUB_CHRONICLE"><Text>Chronicle</Text></Row>
+        <Row Tag="LOC_HTIMELINE_SUB_CHRONICLE_T"><Text>A generated narrative of the game.</Text></Row>
+        <Row Tag="LOC_HTIMELINE_SUB_MAP"><Text>Historical Map</Text></Row>
+        <Row Tag="LOC_HTIMELINE_SUB_MAP_T"><Text>Watch your empire expand turn by turn over the whole game.</Text></Row>
+        <Row Tag="LOC_HTIMELINE_SUB_ARCHIVE"><Text>Archive</Text></Row>
+        <Row Tag="LOC_HTIMELINE_SUB_ARCHIVE_T"><Text>Past games, side by side.</Text></Row>
+        <Row Tag="LOC_HTIMELINE_NARR_BORN"><Text>In the {1_Age}, {2_Leader} forged the {3_Civ} people.</Text></Row>
+        <Row Tag="LOC_HTIMELINE_NARR_CHANGE"><Text>At the dawn of the {1_Age}, the people remade themselves from {2_Prev} into {3_Civ}.</Text></Row>
+        <Row Tag="LOC_HTIMELINE_NARR_LEAD"><Text>They rose to first among the world's powers.</Text></Row>
+        <Row Tag="LOC_HTIMELINE_NARR_END"><Text>{1_Leader}'s line passed from history.</Text></Row>
+        <Row Tag="LOC_HTIMELINE_MAP_RANK"><Text>#{1_R} by territory</Text></Row>
+        <Row Tag="LOC_HTIMELINE_ARC_EMPTY"><Text>No past games yet — finish a game to start an archive.</Text></Row>
+        <Row Tag="LOC_HTIMELINE_ARC_HINT"><Text>Pick two games to compare.</Text></Row>
+        <Row Tag="LOC_HTIMELINE_VERDICT_OUT"><Text>Eliminated T{1_T} as {2_C}</Text></Row>
+        <Row Tag="LOC_HTIMELINE_VERDICT_END"><Text>Reached {1_A} as {2_C}</Text></Row>
+        <Row Tag="LOC_HTIMELINE_MAP_NONE"><Text>No replay was recorded for this game. Load or start a game with this version, play a few turns, then return to the menu — the map fills in as you play.</Text></Row>
+        <Row Tag="LOC_HTIMELINE_SCORE"><Text>Score</Text></Row>
+        <Row Tag="LOC_HTIMELINE_LAND"><Text>Land</Text></Row>
+        <Row Tag="LOC_HTIMELINE_STATUS"><Text>Status</Text></Row>
+        <Row Tag="LOC_HTIMELINE_DATE"><Text>Date</Text></Row>
+        <Row Tag="LOC_HTIMELINE_OVERALL"><Text>Overall</Text></Row>
+        <Row Tag="LOC_HTIMELINE_WORLD_LEADER"><Text>World Leader</Text></Row>
+        <Row Tag="LOC_HTIMELINE_RESULT"><Text>Result</Text></Row>
+        <Row Tag="LOC_HTIMELINE_RANKINGS_TITLE"><Text>Civilization Rankings</Text></Row>
+        <Row Tag="LOC_HTIMELINE_RANKINGS_PODIUM"><Text>Top Runs</Text></Row>
+        <Row Tag="LOC_HTIMELINE_RANKINGS_NOTE"><Text>Your past games ranked by overall score — final score weighted with the territory you held.</Text></Row>
+        <Row Tag="LOC_HTIMELINE_RANKINGS_OPEN_HINT"><Text>Select a run to open its lineage, chronicle, and living map.</Text></Row>
+    </EnglishText>
+</Database>

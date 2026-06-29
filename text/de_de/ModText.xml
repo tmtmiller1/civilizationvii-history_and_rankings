@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <LocalizedText>
+        <Replace Tag="LOC_HTIMELINE_MOD_NAME" Language="de_DE"><Text>Verlauf &amp; Ranglisten</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MOD_DESC" Language="de_DE"><Text>Erzählt die Geschichte jeder Zivilisation über die Zeitalter — wer jeder Anführer war, wie sich Reiche ausbreiteten, eine generierte Chronik und ein Archiv, das vergangene Spiele speichert und vergleicht.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TAB" Language="de_DE"><Text>Historische Zeitleiste</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TITLE" Language="de_DE"><Text>Verlauf &amp; Ranglisten</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MENU" Language="de_DE"><Text>Historische Zeitleiste</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_OPEN" Language="de_DE"><Text>Historische Zeitleiste öffnen</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_EMPTY" Language="de_DE"><Text>Noch keine Geschichte erfasst — spiele ein paar Runden.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TURN_RANGE" Language="de_DE"><Text>Runden {1_A}–{2_B}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TURN_N" Language="de_DE"><Text>Runde {1_T}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_LED" Language="de_DE"><Text>{1_Leader} führte {2_Civ}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_RIBBON" Language="de_DE"><Text>Abstammung</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_RIBBON_T" Language="de_DE"><Text>Die Zivilisation jedes Anführers über alle Zeitalter.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_CHRONICLE" Language="de_DE"><Text>Chronik</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_CHRONICLE_T" Language="de_DE"><Text>Eine generierte Erzählung des Spiels.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_MAP" Language="de_DE"><Text>Historische Karte</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_MAP_T" Language="de_DE"><Text>Sieh zu, wie Reiche wachsen und sich wandeln.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_ARCHIVE" Language="de_DE"><Text>Archiv</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_ARCHIVE_T" Language="de_DE"><Text>Vergangene Spiele im Vergleich.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_BORN" Language="de_DE"><Text>Im {1_Age} schmiedete {2_Leader} das Volk von {3_Civ}.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_CHANGE" Language="de_DE"><Text>Zu Beginn des {1_Age} wandelte sich das Volk von {2_Prev} zu {3_Civ}.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_LEAD" Language="de_DE"><Text>Sie stiegen zur ersten Macht der Welt auf.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_END" Language="de_DE"><Text>{1_Leader}s Linie verschwand aus der Geschichte.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MAP_RANK" Language="de_DE"><Text>#{1_R} nach Territorium</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARC_EMPTY" Language="de_DE"><Text>Noch keine vergangenen Spiele — beende ein Spiel, um ein Archiv anzulegen.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARC_HINT" Language="de_DE"><Text>Wähle zwei Spiele zum Vergleich.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_VERDICT_OUT" Language="de_DE"><Text>Ausgeschieden R{1_T} als {2_C}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_VERDICT_END" Language="de_DE"><Text>Erreichte {1_A} als {2_C}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SCORE" Language="de_DE"><Text>Punkte</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_LAND" Language="de_DE"><Text>Land</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MENU_RANKINGS" Language="de_DE"><Text>Verlauf &amp; Ranglisten</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_TITLE" Language="de_DE"><Text>Zivilisations-Rangliste</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_PODIUM" Language="de_DE"><Text>Beste Spiele</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_NOTE" Language="de_DE"><Text>Deine vergangenen Spiele nach Gesamtpunktzahl — die Endpunktzahl gewichtet mit dem von dir gehaltenen Territorium.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_OPEN_HINT" Language="de_DE"><Text>Wähle ein Spiel, um seine Abstammung, Chronik und lebende Karte zu öffnen.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS" Language="de_DE"><Text>Status</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_DATE" Language="de_DE"><Text>Datum</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_OVERALL" Language="de_DE"><Text>Gesamt</Text></Replace>
+        <Row Tag="LOC_HTIMELINE_WORLD_LEADER"><Text>Weltführer</Text></Row>
+        <Replace Tag="LOC_HTIMELINE_RESULT" Language="de_DE"><Text>Ergebnis</Text></Replace>
+    </LocalizedText>
+</Database>
