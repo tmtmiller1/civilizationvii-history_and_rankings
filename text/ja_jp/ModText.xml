@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <LocalizedText>
+        <Replace Tag="LOC_HTIMELINE_MOD_NAME" Language="ja_JP"><Text>履歴とランキング</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MOD_DESC" Language="ja_JP"><Text>各文明の歴史を時代ごとに語ります。各指導者が誰であったか、帝国がどう広がったか、生成される年代記、そして過去のゲームを記録し比較するアーカイブ。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TAB" Language="ja_JP"><Text>ヒストリカルタイムライン</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TITLE" Language="ja_JP"><Text>履歴とランキング</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MENU" Language="ja_JP"><Text>ヒストリカルタイムライン</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_OPEN" Language="ja_JP"><Text>ヒストリカルタイムラインを開く</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_EMPTY" Language="ja_JP"><Text>まだ履歴がありません — 数ターンプレイしてください。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TURN_RANGE" Language="ja_JP"><Text>ターン {1_A}–{2_B}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TURN_N" Language="ja_JP"><Text>ターン {1_T}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_LED" Language="ja_JP"><Text>{1_Leader} が {2_Civ} を率いた</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_RIBBON" Language="ja_JP"><Text>系譜</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_RIBBON_T" Language="ja_JP"><Text>各時代の指導者の文明。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_CHRONICLE" Language="ja_JP"><Text>年代記</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_CHRONICLE_T" Language="ja_JP"><Text>生成されたゲームの物語。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_MAP" Language="ja_JP"><Text>歴史地図</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_MAP_T" Language="ja_JP"><Text>帝国の成長と変化を見届けよう。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_ARCHIVE" Language="ja_JP"><Text>アーカイブ</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_ARCHIVE_T" Language="ja_JP"><Text>過去のゲームを並べて比較。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_BORN" Language="ja_JP"><Text>{1_Age}に、{2_Leader} が {3_Civ} の民を築いた。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_CHANGE" Language="ja_JP"><Text>{1_Age}の幕開けに、民は {2_Prev} から {3_Civ} へと生まれ変わった。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_LEAD" Language="ja_JP"><Text>彼らは世界の列強の頂点に立った。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_END" Language="ja_JP"><Text>{1_Leader} の系譜は歴史から消えた。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MAP_RANK" Language="ja_JP"><Text>領土 第{1_R}位</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARC_EMPTY" Language="ja_JP"><Text>過去のゲームはまだありません — 1局終えるとアーカイブが始まります。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARC_HINT" Language="ja_JP"><Text>比較する2つのゲームを選んでください。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_VERDICT_OUT" Language="ja_JP"><Text>{2_C} としてターン{1_T}で滅亡</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_VERDICT_END" Language="ja_JP"><Text>{2_C} として {1_A} に到達</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SCORE" Language="ja_JP"><Text>スコア</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_LAND" Language="ja_JP"><Text>領土</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MENU_RANKINGS" Language="ja_JP"><Text>履歴とランキング</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_TITLE" Language="ja_JP"><Text>文明ランキング</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_PODIUM" Language="ja_JP"><Text>トップの対局</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_NOTE" Language="ja_JP"><Text>過去の対局を総合スコア順に並べたもの — 最終スコアに保持した領土を加味しています。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_OPEN_HINT" Language="ja_JP"><Text>対局を選ぶと、その系譜・年代記・リビングマップが開きます。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS" Language="ja_JP"><Text>状態</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_DATE" Language="ja_JP"><Text>日付</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_OVERALL" Language="ja_JP"><Text>総合</Text></Replace>
+        <Row Tag="LOC_HTIMELINE_WORLD_LEADER"><Text>世界の指導者</Text></Row>
+        <Replace Tag="LOC_HTIMELINE_RESULT" Language="ja_JP"><Text>結果</Text></Replace>
+    </LocalizedText>
+</Database>

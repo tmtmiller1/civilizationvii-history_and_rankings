@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <LocalizedText>
+        <Replace Tag="LOC_HTIMELINE_MOD_NAME" Language="ko_KR"><Text>기록 및 순위</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MOD_DESC" Language="ko_KR"><Text>시대를 가로질러 모든 문명의 이야기를 들려줍니다. 각 지도자가 누구였는지, 제국이 어떻게 퍼졌는지, 생성된 연대기, 그리고 지난 게임을 기억하고 비교하는 보관소.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TAB" Language="ko_KR"><Text>역사 연대표</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TITLE" Language="ko_KR"><Text>기록 및 순위</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MENU" Language="ko_KR"><Text>역사 연대표</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_OPEN" Language="ko_KR"><Text>역사 연대표 열기</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_EMPTY" Language="ko_KR"><Text>아직 기록이 없습니다 — 몇 턴 진행하세요.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TURN_RANGE" Language="ko_KR"><Text>턴 {1_A}–{2_B}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TURN_N" Language="ko_KR"><Text>턴 {1_T}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_LED" Language="ko_KR"><Text>{1_Leader}이(가) {2_Civ}을(를) 이끔</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_RIBBON" Language="ko_KR"><Text>계보</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_RIBBON_T" Language="ko_KR"><Text>각 시대 지도자의 문명.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_CHRONICLE" Language="ko_KR"><Text>연대기</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_CHRONICLE_T" Language="ko_KR"><Text>생성된 게임의 이야기.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_MAP" Language="ko_KR"><Text>역사 지도</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_MAP_T" Language="ko_KR"><Text>제국이 성장하고 변하는 모습을 보세요.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_ARCHIVE" Language="ko_KR"><Text>보관소</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_ARCHIVE_T" Language="ko_KR"><Text>지난 게임을 나란히.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_BORN" Language="ko_KR"><Text>{1_Age}에 {2_Leader}이(가) {3_Civ} 민족을 세웠다.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_CHANGE" Language="ko_KR"><Text>{1_Age}의 여명에, 민족은 {2_Prev}에서 {3_Civ}(으)로 거듭났다.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_LEAD" Language="ko_KR"><Text>그들은 세계 열강 중 으뜸으로 올라섰다.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_END" Language="ko_KR"><Text>{1_Leader}의 혈통은 역사에서 사라졌다.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MAP_RANK" Language="ko_KR"><Text>영토 {1_R}위</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARC_EMPTY" Language="ko_KR"><Text>지난 게임이 없습니다 — 게임을 끝내면 보관소가 시작됩니다.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARC_HINT" Language="ko_KR"><Text>비교할 게임 두 개를 고르세요.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_VERDICT_OUT" Language="ko_KR"><Text>{2_C}(으)로 T{1_T}에 멸망</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_VERDICT_END" Language="ko_KR"><Text>{2_C}(으)로 {1_A} 도달</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SCORE" Language="ko_KR"><Text>점수</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_LAND" Language="ko_KR"><Text>영토</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MENU_RANKINGS" Language="ko_KR"><Text>기록 및 순위</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_TITLE" Language="ko_KR"><Text>문명 순위</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_PODIUM" Language="ko_KR"><Text>최고 기록</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_NOTE" Language="ko_KR"><Text>지난 게임을 종합 점수로 정렬했습니다 — 최종 점수에 보유한 영토를 반영했습니다.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_OPEN_HINT" Language="ko_KR"><Text>게임을 선택하면 계보, 연대기, 살아있는 지도가 열립니다.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS" Language="ko_KR"><Text>상태</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_DATE" Language="ko_KR"><Text>날짜</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_OVERALL" Language="ko_KR"><Text>종합</Text></Replace>
+        <Row Tag="LOC_HTIMELINE_WORLD_LEADER"><Text>세계 지도자</Text></Row>
+        <Replace Tag="LOC_HTIMELINE_RESULT" Language="ko_KR"><Text>결과</Text></Replace>
+    </LocalizedText>
+</Database>

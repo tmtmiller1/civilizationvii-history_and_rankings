@@ -1,0 +1,15 @@
+{
+  "name": "historical-timeline-mod-dev",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Dev-only tooling for the Historical Timeline Civ VII mod (lint + syntax check). Not shipped; release.sh excludes it.",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint ui",
+    "check": "find ui -name '*.js' -type f -print0 | xargs -0 -n1 node -c",
+    "verify": "npm run lint && npm run check"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0"
+  }
+}
