@@ -32,7 +32,8 @@ function railFor(story, scrubber) {
 function card(story, idx) {
   const c = el("div", "htimeline-chron-card");
   c.style.borderLeft = `4px solid ${idx.colorByPid[story.pid] || "#888"}`;
-  c.appendChild(el("div", "htimeline-chron-name", idx.nameByPid[story.pid] || ("#" + story.pid)));
+  c.appendChild(el("div", "htimeline-chron-name",
+    idx.nameByPid[story.pid] || loc("LOC_HTIMELINE_PLAYER_N", "Player {1_N}", story.pid)));
   const p = el("div", "htimeline-chron-prose");
   p.innerHTML = story.sentences.map(esc).join(" ");
   c.appendChild(p);

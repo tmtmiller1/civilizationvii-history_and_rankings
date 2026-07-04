@@ -40,5 +40,13 @@
         <Replace Tag="LOC_HTIMELINE_OVERALL" Language="ru_RU"><Text>Итог</Text></Replace>
         <Row Tag="LOC_HTIMELINE_WORLD_LEADER"><Text>Мировой лидер</Text></Row>
         <Replace Tag="LOC_HTIMELINE_RESULT" Language="ru_RU"><Text>Результат</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS_COMPLETED" Language="ru_RU"><Text>Завершена</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS_IN_PROGRESS" Language="ru_RU"><Text>В процессе</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARCHIVE_CONTEXT" Language="ru_RU"><Text>Эта сводка восстановлена из сохранённого обзора хронологии.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_WATER" Language="ru_RU"><Text>Вода</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_LAND" Language="ru_RU"><Text>Суша</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_MOUNTAIN" Language="ru_RU"><Text>Горы</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_PLAYER_N" Language="ru_RU"><Text>Игрок {1_N}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MAP_NONE" Language="ru_RU"><Text>Для этой игры не было записано воспроизведение. Загрузите или начните игру в этой версии, сыграйте несколько ходов, затем вернитесь в меню — карта заполнится по мере игры.</Text></Replace>
     </LocalizedText>
 </Database>

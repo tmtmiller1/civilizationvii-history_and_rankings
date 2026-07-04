@@ -40,5 +40,13 @@
         <Replace Tag="LOC_HTIMELINE_OVERALL" Language="ja_JP"><Text>総合</Text></Replace>
         <Row Tag="LOC_HTIMELINE_WORLD_LEADER"><Text>世界の指導者</Text></Row>
         <Replace Tag="LOC_HTIMELINE_RESULT" Language="ja_JP"><Text>結果</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS_COMPLETED" Language="ja_JP"><Text>完了</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS_IN_PROGRESS" Language="ja_JP"><Text>進行中</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARCHIVE_CONTEXT" Language="ja_JP"><Text>この要約は、保存されたタイムラインの記録から再構成されています。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_WATER" Language="ja_JP"><Text>水域</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_LAND" Language="ja_JP"><Text>陸地</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_MOUNTAIN" Language="ja_JP"><Text>山</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_PLAYER_N" Language="ja_JP"><Text>プレイヤー {1_N}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MAP_NONE" Language="ja_JP"><Text>このゲームのリプレイは記録されていません。このバージョンでゲームをロードまたは開始し、数ターンプレイしてからメニューに戻ってください — プレイするにつれてマップが埋まっていきます。</Text></Replace>
     </LocalizedText>
 </Database>

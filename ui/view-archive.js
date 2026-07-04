@@ -6,7 +6,7 @@
 import { el } from "/history-and-rankings/ui/timeline-dom.js";
 import { loadArchive } from "/history-and-rankings/ui/timeline-store.js";
 import { civName, civColor, ageOrder, leaderName } from "/history-and-rankings/ui/lineage-read.js";
-import { loc } from "/history-and-rankings/ui/timeline-i18n.js";
+import { loc, num } from "/history-and-rankings/ui/timeline-i18n.js";
 import { renderHistoricalMap } from "/history-and-rankings/ui/view-historical-map.js";
 
 function localPlayer(g) {
@@ -64,7 +64,7 @@ function verdict(g) {
   const civ = p ? civName(Object.values(p.ages || {}).at(-1)) : "?";
   if (statusOf(g) !== "completed") return loc("LOC_HTIMELINE_STATUS_IN_PROGRESS", "In Progress");
   if (p?.eliminatedTurn != null) {
-    return loc("LOC_HTIMELINE_VERDICT_OUT", "Eliminated T{1_T} as {2_C}", p.eliminatedTurn, civ);
+    return loc("LOC_HTIMELINE_VERDICT_OUT", "Eliminated T{1_T} as {2_C}", num(p.eliminatedTurn), civ);
   }
   return loc("LOC_HTIMELINE_VERDICT_END", "Reached {1_A} as {2_C}", String(g.lastAge || "").replace(/^AGE_/, ""), civ);
 }
@@ -92,8 +92,8 @@ function gameRow(ctx) {
   r.appendChild(status);
   r.appendChild(el("div", "htimeline-arc-rank", `#${rank}`));
   r.appendChild(el("div", "htimeline-arc-date", dateStr(g.endedIso)));
-  r.appendChild(el("div", "htimeline-arc-turns", loc("LOC_HTIMELINE_TURN_N", "Turn {1_T}", g.turns | 0)));
-  r.appendChild(el("div", "htimeline-arc-score", String(overallScore(g, stats.maxScore, stats.maxLand))));
+  r.appendChild(el("div", "htimeline-arc-turns", loc("LOC_HTIMELINE_TURN_N", "Turn {1_T}", num(g.turns | 0))));
+  r.appendChild(el("div", "htimeline-arc-score", num(overallScore(g, stats.maxScore, stats.maxLand))));
   r.appendChild(el("div", "htimeline-arc-line", lineageStr(g)));
   r.appendChild(el("div", "htimeline-arc-verdict", verdict(g)));
   r.addEventListener("click", () => {
@@ -110,7 +110,7 @@ function bar(label, val, max) {
   const fill = el("div", "htimeline-bar-fill");
   fill.style.width = `${Math.round(100 * val / Math.max(1, max))}%`;
   track.appendChild(fill); row.appendChild(track);
-  row.appendChild(el("span", "htimeline-bar-val", String(val)));
+  row.appendChild(el("span", "htimeline-bar-val", num(val)));
   return row;
 }
 
@@ -191,8 +191,8 @@ function shellDetailHeader(host, game, maxScore, _maxLand) {
   head.appendChild(el("div", "htimeline-shell-title", `${dateStr(game.endedIso)}  ·  ${lineageStr(game)}`));
   const stats = el("div", "htimeline-shell-stats");
   stats.appendChild(badge(statusLabel(game), statusClass(game)));
-  stats.appendChild(el("span", "htimeline-shell-pill", `${loc("LOC_HTIMELINE_SCORE", "Score")}: ${localScore(game)}`));
-  stats.appendChild(el("span", "htimeline-shell-pill", `${loc("LOC_HTIMELINE_LAND", "Land")}: ${localLand(game)}`));
+  stats.appendChild(el("span", "htimeline-shell-pill", `${loc("LOC_HTIMELINE_SCORE", "Score")}: ${num(localScore(game))}`));
+  stats.appendChild(el("span", "htimeline-shell-pill", `${loc("LOC_HTIMELINE_LAND", "Land")}: ${num(localLand(game))}`));
   stats.appendChild(el("span", "htimeline-shell-pill htimeline-shell-pill-leader",
     `${loc("LOC_HTIMELINE_WORLD_LEADER", "World Leader")}: ${worldLeader(localScore(game), maxScore)}`));
   head.appendChild(stats);
@@ -220,7 +220,7 @@ function renderDetailChronicle(host, game) {
   c.appendChild(el("div", "htimeline-cmp-title", loc("LOC_HTIMELINE_SUB_CHRONICLE", "Chronicle")));
   const ln = lineageStr(game);
   c.appendChild(el("div", "htimeline-cmp-verdict", `${loc("LOC_HTIMELINE_LED", "{1_Leader} led {2_Civ}", p?.leader || "?", ln)}`));
-  c.appendChild(el("div", "htimeline-cmp-verdict", `${loc("LOC_HTIMELINE_TURN_N", "Turn {1_T}", game.turns | 0)} · ${verdict(game)}`));
+  c.appendChild(el("div", "htimeline-cmp-verdict", `${loc("LOC_HTIMELINE_TURN_N", "Turn {1_T}", num(game.turns | 0))} · ${verdict(game)}`));
   c.appendChild(el("div", "htimeline-cmp-verdict", loc("LOC_HTIMELINE_ARCHIVE_CONTEXT", "This summary is reconstructed from your saved timeline recap.")));
   host.appendChild(c);
 }
@@ -321,7 +321,7 @@ function titleOf(g) {
 }
 
 function metaLine(g) {
-  return `${dateStr(g.endedIso)} · ${loc("LOC_HTIMELINE_TURN_N", "Turn {1_T}", g.turns | 0)} · ${verdict(g)}`;
+  return `${dateStr(g.endedIso)} · ${loc("LOC_HTIMELINE_TURN_N", "Turn {1_T}", num(g.turns | 0))} · ${verdict(g)}`;
 }
 
 // Civilization V-style honor roll: a run's overall score earns a historical
@@ -366,7 +366,7 @@ function podiumCard(b, maxOverall, onOpen) {
   card.appendChild(el("div", "htimeline-rank-podium-meta", metaLine(g)));
   card.appendChild(leaderTitleEl(overall, maxOverall, "is-podium"));
   const scoreRow = el("div", "htimeline-rank-podium-scorerow");
-  scoreRow.appendChild(el("span", "htimeline-rank-podium-score", String(overall)));
+  scoreRow.appendChild(el("span", "htimeline-rank-podium-score", num(overall)));
   scoreRow.appendChild(el("span", "htimeline-rank-podium-lbl", loc("LOC_HTIMELINE_SCORE", "Score")));
   card.appendChild(scoreRow);
   card.appendChild(rankScoreBar(overall, maxOverall, color));
@@ -389,7 +389,7 @@ function rankRow(b, maxOverall, onOpen) {
   mid.appendChild(leaderTitleEl(overall, maxOverall, "is-row"));
   mid.appendChild(rankScoreBar(overall, maxOverall, color));
   row.appendChild(mid);
-  row.appendChild(el("div", "htimeline-rank-score", String(overall)));
+  row.appendChild(el("div", "htimeline-rank-score", num(overall)));
   row.addEventListener("click", () => onOpen(g));
   return row;
 }

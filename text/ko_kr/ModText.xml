@@ -40,5 +40,13 @@
         <Replace Tag="LOC_HTIMELINE_OVERALL" Language="ko_KR"><Text>종합</Text></Replace>
         <Row Tag="LOC_HTIMELINE_WORLD_LEADER"><Text>세계 지도자</Text></Row>
         <Replace Tag="LOC_HTIMELINE_RESULT" Language="ko_KR"><Text>결과</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS_COMPLETED" Language="ko_KR"><Text>완료됨</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS_IN_PROGRESS" Language="ko_KR"><Text>진행 중</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARCHIVE_CONTEXT" Language="ko_KR"><Text>이 요약은 저장된 타임라인 기록에서 재구성되었습니다.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_WATER" Language="ko_KR"><Text>물</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_LAND" Language="ko_KR"><Text>육지</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_MOUNTAIN" Language="ko_KR"><Text>산</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_PLAYER_N" Language="ko_KR"><Text>플레이어 {1_N}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MAP_NONE" Language="ko_KR"><Text>이 게임에 대한 리플레이가 기록되지 않았습니다. 이 버전으로 게임을 불러오거나 시작하여 몇 턴 플레이한 후 메뉴로 돌아오세요 — 플레이하는 동안 지도가 채워집니다.</Text></Replace>
     </LocalizedText>
 </Database>

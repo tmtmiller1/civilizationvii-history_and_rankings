@@ -40,5 +40,13 @@
         <Replace Tag="LOC_HTIMELINE_OVERALL" Language="zh_Hans_CN"><Text>综合</Text></Replace>
         <Row Tag="LOC_HTIMELINE_WORLD_LEADER"><Text>世界领袖</Text></Row>
         <Replace Tag="LOC_HTIMELINE_RESULT" Language="zh_Hans_CN"><Text>结果</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS_COMPLETED" Language="zh_Hans_CN"><Text>已完成</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS_IN_PROGRESS" Language="zh_Hans_CN"><Text>进行中</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARCHIVE_CONTEXT" Language="zh_Hans_CN"><Text>此摘要是根据你保存的时间线回顾重建的。</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_WATER" Language="zh_Hans_CN"><Text>水域</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_LAND" Language="zh_Hans_CN"><Text>陆地</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_MOUNTAIN" Language="zh_Hans_CN"><Text>山脉</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_PLAYER_N" Language="zh_Hans_CN"><Text>玩家 {1_N}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MAP_NONE" Language="zh_Hans_CN"><Text>未记录此局游戏的回放。请使用此版本加载或开始一局游戏，进行几个回合，然后返回菜单——地图会随着你的游戏进程逐渐填充。</Text></Replace>
     </LocalizedText>
 </Database>

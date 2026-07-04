@@ -3,6 +3,38 @@
 All notable changes to the Historical Timeline mod are documented here. Format
 follows Keep a Changelog; this mod adheres to semantic versioning.
 
+## [1.1.0] - 2026-07-04
+
+A localization release, bringing the mod to parity with the Demographics mod's
+recent full-localization pass. Polish is now a fully translated language, every
+remaining hardcoded interface string has been moved behind a translation tag,
+and displayed numbers now format for the player's language.
+
+### Added
+- **Polish (pl_PL) localization.** Polish is now a supported language with a
+  complete translation covering every string in the mod, using the game's own
+  Polish terminology (*Tura*, *Era*, *Cywilizacja*, *Przywódca*, *Wynik*). This
+  brings the mod to eleven fully localized languages.
+- **Full translation coverage for the interface.** Strings that were still
+  hardcoded in English — the Historical Map's terrain legend (*Water / Land /
+  Mountain*) and the Chronicle's "Player N" leader fallback — now resolve
+  through translation tags, so they localize with the rest of the UI.
+- **Completed the ten existing translations.** Three interface strings were used
+  in code but never defined in any language (the *Completed* / *In Progress*
+  run-status badges and the archive-summary caption), so they always showed
+  their English fallback; the long "no replay recorded" map message was defined
+  in English only and missing from every translation. All are now translated in
+  German, Spanish, French, Italian, Japanese, Korean, Portuguese (BR), Russian
+  and Simplified Chinese.
+
+### Fixed
+- **Numbers now format for the player's language.** Scores, land figures and
+  turn counts on the rankings board, archive rows, compare bars and detail
+  header previously always used English digit grouping. They now route through
+  the game's own `Locale.toNumber`, the same API the base game uses, so a German
+  player sees `1.234` and a French player `1 234`. Off-engine it falls back to
+  the previous formatting, so nothing regresses.
+
 ## [1.0.0]
 
 A post-game **History & Rankings** companion — in the spirit of Civilization V's

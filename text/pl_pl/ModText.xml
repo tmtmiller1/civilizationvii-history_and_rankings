@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Polish (pl_PL) localization for the History & Rankings mod.
+
+  A complete translation covering every LOC key in the mod, using the game's own
+  Polish terminology (Tura, Era, Cywilizacja, Przywódca, Wynik). Dynamic slots
+  like {1_Age} / {2_Civ} are filled at display time with names the base game has
+  already localized.
+-->
+<Database>
+    <LocalizedText>
+        <Replace Tag="LOC_HTIMELINE_MOD_NAME" Language="pl_PL"><Text>Historia i rankingi</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MOD_DESC" Language="pl_PL"><Text>Opowiada historię każdej cywilizacji na przestrzeni er — kim był każdy przywódca, jak rozrastały się imperia, generowaną kronikę oraz archiwum, które zapamiętuje i porównuje poprzednie rozgrywki.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TAB" Language="pl_PL"><Text>Oś czasu historii</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TITLE" Language="pl_PL"><Text>Historia i rankingi</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MENU" Language="pl_PL"><Text>Oś czasu historii</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MENU_RANKINGS" Language="pl_PL"><Text>Historia i rankingi</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_OPEN" Language="pl_PL"><Text>Otwórz oś czasu historii</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_EMPTY" Language="pl_PL"><Text>Nie zarejestrowano jeszcze historii — rozegraj kilka tur.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TURN_RANGE" Language="pl_PL"><Text>Tury {1_A}–{2_B}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TURN_N" Language="pl_PL"><Text>Tura {1_T}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_LED" Language="pl_PL"><Text>{1_Leader} przewodził {2_Civ}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_RIBBON" Language="pl_PL"><Text>Rodowód</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_RIBBON_T" Language="pl_PL"><Text>Cywilizacja każdego przywódcy w każdej erze.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_CHRONICLE" Language="pl_PL"><Text>Kronika</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_CHRONICLE_T" Language="pl_PL"><Text>Wygenerowana opowieść o rozgrywce.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_MAP" Language="pl_PL"><Text>Mapa historyczna</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_MAP_T" Language="pl_PL"><Text>Obserwuj, jak twoje imperium rozrasta się tura po turze przez całą rozgrywkę.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_ARCHIVE" Language="pl_PL"><Text>Archiwum</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SUB_ARCHIVE_T" Language="pl_PL"><Text>Poprzednie rozgrywki obok siebie.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_BORN" Language="pl_PL"><Text>W erze {1_Age} {2_Leader} ukształtował naród {3_Civ}.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_CHANGE" Language="pl_PL"><Text>U progu ery {1_Age} lud przemienił się z {2_Prev} w {3_Civ}.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_LEAD" Language="pl_PL"><Text>Wznieśli się na pierwsze miejsce wśród potęg świata.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_NARR_END" Language="pl_PL"><Text>Ród {1_Leader} zniknął z kart historii.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MAP_RANK" Language="pl_PL"><Text>#{1_R} pod względem terytorium</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARC_EMPTY" Language="pl_PL"><Text>Brak poprzednich rozgrywek — ukończ grę, aby rozpocząć archiwum.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARC_HINT" Language="pl_PL"><Text>Wybierz dwie rozgrywki do porównania.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_VERDICT_OUT" Language="pl_PL"><Text>Wyeliminowany w turze {1_T} jako {2_C}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_VERDICT_END" Language="pl_PL"><Text>Osiągnięto {1_A} jako {2_C}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MAP_NONE" Language="pl_PL"><Text>Dla tej rozgrywki nie zarejestrowano powtórki. Wczytaj lub rozpocznij grę w tej wersji, rozegraj kilka tur, a następnie wróć do menu — mapa wypełni się w miarę gry.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_SCORE" Language="pl_PL"><Text>Wynik</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_LAND" Language="pl_PL"><Text>Terytorium</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS" Language="pl_PL"><Text>Status</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_DATE" Language="pl_PL"><Text>Data</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_OVERALL" Language="pl_PL"><Text>Łącznie</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_WORLD_LEADER" Language="pl_PL"><Text>Przywódca świata</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RESULT" Language="pl_PL"><Text>Rezultat</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_TITLE" Language="pl_PL"><Text>Rankingi cywilizacji</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_PODIUM" Language="pl_PL"><Text>Najlepsze rozgrywki</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_NOTE" Language="pl_PL"><Text>Twoje poprzednie rozgrywki uszeregowane według łącznego wyniku — wynik końcowy ważony wielkością posiadanego terytorium.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_RANKINGS_OPEN_HINT" Language="pl_PL"><Text>Wybierz rozgrywkę, aby otworzyć jej rodowód, kronikę i żywą mapę.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS_COMPLETED" Language="pl_PL"><Text>Ukończona</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS_IN_PROGRESS" Language="pl_PL"><Text>W toku</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARCHIVE_CONTEXT" Language="pl_PL"><Text>To podsumowanie zostało odtworzone z zapisanego przeglądu osi czasu.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_WATER" Language="pl_PL"><Text>Woda</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_LAND" Language="pl_PL"><Text>Ląd</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_MOUNTAIN" Language="pl_PL"><Text>Góry</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_PLAYER_N" Language="pl_PL"><Text>Gracz {1_N}</Text></Replace>
+    </LocalizedText>
+</Database>

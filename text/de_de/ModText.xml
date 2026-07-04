@@ -40,5 +40,13 @@
         <Replace Tag="LOC_HTIMELINE_OVERALL" Language="de_DE"><Text>Gesamt</Text></Replace>
         <Row Tag="LOC_HTIMELINE_WORLD_LEADER"><Text>Weltführer</Text></Row>
         <Replace Tag="LOC_HTIMELINE_RESULT" Language="de_DE"><Text>Ergebnis</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS_COMPLETED" Language="de_DE"><Text>Abgeschlossen</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS_IN_PROGRESS" Language="de_DE"><Text>Laufend</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARCHIVE_CONTEXT" Language="de_DE"><Text>Diese Zusammenfassung wurde aus deiner gespeicherten Zeitleisten-Rückschau rekonstruiert.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_WATER" Language="de_DE"><Text>Wasser</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_LAND" Language="de_DE"><Text>Land</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_MOUNTAIN" Language="de_DE"><Text>Berg</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_PLAYER_N" Language="de_DE"><Text>Spieler {1_N}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MAP_NONE" Language="de_DE"><Text>Für dieses Spiel wurde keine Wiedergabe aufgezeichnet. Lade oder starte ein Spiel mit dieser Version, spiele ein paar Runden und kehre dann zum Menü zurück — die Karte füllt sich, während du spielst.</Text></Replace>
     </LocalizedText>
 </Database>

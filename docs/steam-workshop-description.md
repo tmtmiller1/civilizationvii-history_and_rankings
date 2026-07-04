@@ -22,7 +22,7 @@ This mod is a work in progress as I simply cannot test all scenarios and resolut
 [list]
 [*]Cross-session persistence: your games archive and per-run map replays survive restarts, and the main menu lists your top games.
 [*]Renders cleanly at any resolution, from 1366x768 up to 4K.
-[*]Localized in ten languages: English, German, Spanish, French, Italian, Japanese, Korean, Brazilian Portuguese, Russian, and Simplified Chinese.
+[*]Localized in eleven languages: English, German, Spanish, French, Italian, Japanese, Korean, Brazilian Portuguese, Russian, Simplified Chinese, and Polish.
 [*]Readable, un-minified source.
 [/list]
 

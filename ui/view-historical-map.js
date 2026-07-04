@@ -13,6 +13,7 @@ import { el } from "/history-and-rankings/ui/timeline-dom.js";
 import { makeTooltip } from "/history-and-rankings/ui/timeline-tooltip.js";
 import { makeScrubber } from "/history-and-rankings/ui/timeline-scrubber.js";
 import { civName, civColor } from "/history-and-rankings/ui/lineage-read.js";
+import { loc } from "/history-and-rankings/ui/timeline-i18n.js";
 import { loadGameMap, readJSON } from "/history-and-rankings/ui/timeline-store.js";
 import { readLedger } from "/history-and-rankings/ui/lineage-ledger.js";
 import { paintMinimap, unrle, miniCanvasSize } from "/history-and-rankings/ui/map-grid.js";
@@ -64,7 +65,11 @@ function wireHover(cv, grid, tip, st, civTypeFor) {
 
 // Legend: a terrain key + every civ on the map in its real color, so the colored
 // territory reads at a glance.
-const TERRAIN_LEGEND = [["#16314d", "Water"], ["#566b3c", "Land"], ["#474450", "Mountain"]];
+const TERRAIN_LEGEND = [
+  ["#16314d", "LOC_HTIMELINE_TERRAIN_WATER", "Water"],
+  ["#566b3c", "LOC_HTIMELINE_TERRAIN_LAND", "Land"],
+  ["#474450", "LOC_HTIMELINE_TERRAIN_MOUNTAIN", "Mountain"]
+];
 
 function legendItem(color, label) {
   const item = el("span", "htimeline-legend-item");
@@ -78,7 +83,7 @@ function legendItem(color, label) {
 function buildLegend(grid, civTypeFor) {
   const legend = el("div", "htimeline-map-legend");
   const terr = el("div", "htimeline-legend-row");
-  TERRAIN_LEGEND.forEach(([c, label]) => terr.appendChild(legendItem(c, label)));
+  TERRAIN_LEGEND.forEach(([c, key, fb]) => terr.appendChild(legendItem(c, loc(key, fb))));
   legend.appendChild(terr);
   const civs = el("div", "htimeline-legend-row");
   const age = grid.frames[grid.frames.length - 1].a;
