@@ -40,5 +40,13 @@
         <Replace Tag="LOC_HTIMELINE_OVERALL" Language="fr_FR"><Text>Global</Text></Replace>
         <Row Tag="LOC_HTIMELINE_WORLD_LEADER"><Text>Dirigeant mondial</Text></Row>
         <Replace Tag="LOC_HTIMELINE_RESULT" Language="fr_FR"><Text>Résultat</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS_COMPLETED" Language="fr_FR"><Text>Terminée</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS_IN_PROGRESS" Language="fr_FR"><Text>En cours</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARCHIVE_CONTEXT" Language="fr_FR"><Text>Ce résumé est reconstitué à partir de votre récapitulatif de chronologie enregistré.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_WATER" Language="fr_FR"><Text>Eau</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_LAND" Language="fr_FR"><Text>Terre</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_MOUNTAIN" Language="fr_FR"><Text>Montagne</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_PLAYER_N" Language="fr_FR"><Text>Joueur {1_N}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MAP_NONE" Language="fr_FR"><Text>Aucune rediffusion n'a été enregistrée pour cette partie. Chargez ou lancez une partie avec cette version, jouez quelques tours, puis revenez au menu — la carte se remplit au fil de votre partie.</Text></Replace>
     </LocalizedText>
 </Database>

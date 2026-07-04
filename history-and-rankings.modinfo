@@ -6,7 +6,7 @@
         <Authors>Tower</Authors>
         <Package>HistoryAndRankingsMod</Package>
         <PackageSortIndex>1010</PackageSortIndex>
-        <Version>1.0.0</Version>
+        <Version>1.1.0</Version>
     </Properties>
     <Dependencies>
         <Mod id="base-standard" title="LOC_MODULE_BASE_STANDARD_NAME" />
@@ -30,6 +30,7 @@
                     <Item locale="pt_BR">text/pt_br/ModText.xml</Item>
                     <Item locale="ru_RU">text/ru_ru/ModText.xml</Item>
                     <Item locale="zh_Hans_CN">text/zh_cn/ModText.xml</Item>
+                    <Item locale="pl_PL">text/pl_pl/ModText.xml</Item>
                 </UpdateText>
                 <UIScripts>
                     <Item>ui/timeline-bootstrap-shell.js</Item>
@@ -80,6 +81,7 @@
                     <Item locale="pt_BR">text/pt_br/ModText.xml</Item>
                     <Item locale="ru_RU">text/ru_ru/ModText.xml</Item>
                     <Item locale="zh_Hans_CN">text/zh_cn/ModText.xml</Item>
+                    <Item locale="pl_PL">text/pl_pl/ModText.xml</Item>
                 </UpdateText>
                 <UIScripts>
                     <Item>ui/timeline-bootstrap.js</Item>

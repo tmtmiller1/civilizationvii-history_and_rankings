@@ -40,5 +40,13 @@
         <Replace Tag="LOC_HTIMELINE_OVERALL" Language="it_IT"><Text>Complessivo</Text></Replace>
         <Row Tag="LOC_HTIMELINE_WORLD_LEADER"><Text>Leader mondiale</Text></Row>
         <Replace Tag="LOC_HTIMELINE_RESULT" Language="it_IT"><Text>Risultato</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS_COMPLETED" Language="it_IT"><Text>Completata</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS_IN_PROGRESS" Language="it_IT"><Text>In corso</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARCHIVE_CONTEXT" Language="it_IT"><Text>Questo riepilogo è ricostruito dal riassunto della cronologia salvato.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_WATER" Language="it_IT"><Text>Acqua</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_LAND" Language="it_IT"><Text>Terra</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_MOUNTAIN" Language="it_IT"><Text>Montagna</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_PLAYER_N" Language="it_IT"><Text>Giocatore {1_N}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MAP_NONE" Language="it_IT"><Text>Nessun replay è stato registrato per questa partita. Carica o avvia una partita con questa versione, gioca qualche turno, poi torna al menu — la mappa si riempie man mano che giochi.</Text></Replace>
     </LocalizedText>
 </Database>

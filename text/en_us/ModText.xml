@@ -41,5 +41,12 @@
         <Row Tag="LOC_HTIMELINE_RANKINGS_PODIUM"><Text>Top Runs</Text></Row>
         <Row Tag="LOC_HTIMELINE_RANKINGS_NOTE"><Text>Your past games ranked by overall score — final score weighted with the territory you held.</Text></Row>
         <Row Tag="LOC_HTIMELINE_RANKINGS_OPEN_HINT"><Text>Select a run to open its lineage, chronicle, and living map.</Text></Row>
+        <Row Tag="LOC_HTIMELINE_STATUS_COMPLETED"><Text>Completed</Text></Row>
+        <Row Tag="LOC_HTIMELINE_STATUS_IN_PROGRESS"><Text>In Progress</Text></Row>
+        <Row Tag="LOC_HTIMELINE_ARCHIVE_CONTEXT"><Text>This summary is reconstructed from your saved timeline recap.</Text></Row>
+        <Row Tag="LOC_HTIMELINE_TERRAIN_WATER"><Text>Water</Text></Row>
+        <Row Tag="LOC_HTIMELINE_TERRAIN_LAND"><Text>Land</Text></Row>
+        <Row Tag="LOC_HTIMELINE_TERRAIN_MOUNTAIN"><Text>Mountain</Text></Row>
+        <Row Tag="LOC_HTIMELINE_PLAYER_N"><Text>Player {1_N}</Text></Row>
     </EnglishText>
 </Database>

@@ -40,5 +40,13 @@
         <Replace Tag="LOC_HTIMELINE_OVERALL" Language="es_ES"><Text>Global</Text></Replace>
         <Row Tag="LOC_HTIMELINE_WORLD_LEADER"><Text>Líder mundial</Text></Row>
         <Replace Tag="LOC_HTIMELINE_RESULT" Language="es_ES"><Text>Resultado</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS_COMPLETED" Language="es_ES"><Text>Completada</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_STATUS_IN_PROGRESS" Language="es_ES"><Text>En curso</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_ARCHIVE_CONTEXT" Language="es_ES"><Text>Este resumen se reconstruye a partir de tu resumen de cronología guardado.</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_WATER" Language="es_ES"><Text>Agua</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_LAND" Language="es_ES"><Text>Tierra</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_TERRAIN_MOUNTAIN" Language="es_ES"><Text>Montaña</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_PLAYER_N" Language="es_ES"><Text>Jugador {1_N}</Text></Replace>
+        <Replace Tag="LOC_HTIMELINE_MAP_NONE" Language="es_ES"><Text>No se registró ninguna repetición para esta partida. Carga o inicia una partida con esta versión, juega unos turnos y vuelve al menú: el mapa se irá completando a medida que juegas.</Text></Replace>
     </LocalizedText>
 </Database>
