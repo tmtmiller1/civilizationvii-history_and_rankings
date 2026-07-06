@@ -1,87 +1,22 @@
 // view-archive.js
 //
-// Archive and cross-game rankings. In game mode it supports side-by-side
-// compare; in shell mode it acts as a launchpad into detail tabs.
+// Archive and cross-game compare/detail. In game mode it supports side-by-side
+// compare; in shell mode it acts as a launchpad into detail tabs. Pure logic
+// lives in archive-model, shared presentation in archive-format, and the
+// leaderboard in view-rankings; this file only builds the archive DOM.
 
 import { el } from "/history-and-rankings/ui/timeline-dom.js";
 import { loadArchive } from "/history-and-rankings/ui/timeline-store.js";
-import { civName, civColor, ageOrder, leaderName } from "/history-and-rankings/ui/lineage-read.js";
+import { civName, civColor, ageOrder } from "/history-and-rankings/ui/lineage-read.js";
 import { loc, num } from "/history-and-rankings/ui/timeline-i18n.js";
 import { renderHistoricalMap } from "/history-and-rankings/ui/view-historical-map.js";
-
-function localPlayer(g) {
-  return g && g.localPid != null ? g.players?.[g.localPid] : null;
-}
-
-function localScore(g) {
-  return localPlayer(g)?.finalScore | 0;
-}
-
-function localLand(g) {
-  return localPlayer(g)?.finalLand | 0;
-}
-
-function statusFromOutcome(g) {
-  return (g?.outcome === "in_progress" || g?.outcome === "abandoned") ? "in_progress" : null;
-}
-
-function statusFromState(g, p) {
-  return (p?.eliminatedTurn != null || g?.lastAge === "AGE_MODERN") ? "completed" : null;
-}
-
-function statusOf(g) {
-  if (g?.status === "completed" || g?.status === "in_progress") return g.status;
-  const p = localPlayer(g);
-  const byOutcome = statusFromOutcome(g);
-  if (byOutcome) return byOutcome;
-  const byState = statusFromState(g, p);
-  if (byState) return byState;
-  return "in_progress";
-}
-
-function statusLabel(g) {
-  return statusOf(g) === "completed"
-    ? loc("LOC_HTIMELINE_STATUS_COMPLETED", "Completed")
-    : loc("LOC_HTIMELINE_STATUS_IN_PROGRESS", "In Progress");
-}
-
-function statusClass(g) {
-  return statusOf(g) === "completed" ? "is-completed" : "is-progress";
-}
-
-function dateStr(iso) {
-  try { return new Date(iso).toLocaleDateString(); } catch (_) { return iso || "?"; }
-}
-
-function lineageStr(g) {
-  const p = localPlayer(g);
-  if (!p) return "?";
-  return ageOrder().filter((a) => p.ages?.[a]).map((a) => civName(p.ages[a])).join(" -> ") || "?";
-}
-
-function verdict(g) {
-  const p = localPlayer(g);
-  const civ = p ? civName(Object.values(p.ages || {}).at(-1)) : "?";
-  if (statusOf(g) !== "completed") return loc("LOC_HTIMELINE_STATUS_IN_PROGRESS", "In Progress");
-  if (p?.eliminatedTurn != null) {
-    return loc("LOC_HTIMELINE_VERDICT_OUT", "Eliminated T{1_T} as {2_C}", num(p.eliminatedTurn), civ);
-  }
-  return loc("LOC_HTIMELINE_VERDICT_END", "Reached {1_A} as {2_C}", String(g.lastAge || "").replace(/^AGE_/, ""), civ);
-}
-
-// The headline ranking number is the civilization's OWN score — the value the
-// game itself keeps (Player.Stats.getScore(), captured per run), not a
-// normalized 0–1000 index. Runs sort by it and earn their world-leader title
-// from where they land relative to the best score in the archive. (maxScore /
-// maxLand are kept in the signature so existing call sites stay untouched.)
-function overallScore(g, _maxScore, _maxLand) {
-  return localScore(g);
-}
-
-function badge(text, cls) {
-  const b = el("span", `htimeline-badge ${cls}`, text);
-  return b;
-}
+import {
+  localPlayer, localScore, localLand, statusClass,
+  overallScore, archiveStats, maxOf, worldLeader
+} from "/history-and-rankings/ui/archive-model.js";
+import {
+  badge, statusLabel, dateStr, lineageStr, verdict
+} from "/history-and-rankings/ui/archive-format.js";
 
 function gameRow(ctx) {
   const { g, rank, stats, opts, selected, onPick } = ctx;
@@ -130,16 +65,6 @@ function compareCard(g, other) {
   c.appendChild(bar(loc("LOC_HTIMELINE_LAND", "Land"), ml, Math.max(ml, other.l)));
   c.appendChild(el("div", "htimeline-cmp-verdict", verdict(g)));
   return c;
-}
-
-function maxOf(g) {
-  return { s: localScore(g), l: localLand(g) };
-}
-
-function archiveStats(games) {
-  const maxScore = Math.max(1, ...games.map((g) => localScore(g)));
-  const maxLand = Math.max(1, ...games.map((g) => localLand(g)));
-  return { maxScore, maxLand };
 }
 
 function buildArchiveHead() {
@@ -275,171 +200,4 @@ export function renderArchive(host, opts = {}) {
     if (!opts.onOpenGame) renderCompare(ui.cmp, ranked, sel);
   };
   repaint();
-}
-
-// ── Civilization Rankings (leaderboard) ───────────────────────────────────────
-// A demographics-style board of your past runs: a top-3 podium (gold/silver/bronze)
-// beside the full ranked list, each entry colored by its final-age civ and clickable
-// to open the per-run detail pop-up (lineage / chronicle / living map).
-
-function primaryCivColor(g) {
-  const p = localPlayer(g);
-  const last = p ? Object.values(p.ages || {}).at(-1) : null;
-  return last ? civColor(last) : "rgba(201,162,76,.85)";
-}
-
-function leaderOf(g) {
-  const p = localPlayer(g);
-  return p && p.leader ? leaderName(p.leader) : "";
-}
-
-function lineageSwatches(g) {
-  const wrap = el("div", "htimeline-rank-lineage");
-  const p = localPlayer(g);
-  ageOrder().filter((a) => p?.ages?.[a]).forEach((a) => {
-    const seg = el("span", "htimeline-rank-seg", civName(p.ages[a]));
-    seg.style.background = civColor(p.ages[a]);
-    wrap.appendChild(seg);
-  });
-  return wrap;
-}
-
-function rankScoreBar(overall, max, color) {
-  const track = el("div", "htimeline-rank-bar");
-  const fill = el("div", "htimeline-rank-bar-fill");
-  fill.style.width = `${Math.round(100 * overall / Math.max(1, max))}%`;
-  fill.style.background = color;
-  track.appendChild(fill);
-  return track;
-}
-
-// "Augustus · Rome → America" — leader plus the civ lineage, the headline for a run.
-function titleOf(g) {
-  const leader = leaderOf(g);
-  const line = lineageStr(g);
-  return leader ? `${leader} · ${line}` : line;
-}
-
-function metaLine(g) {
-  return `${dateStr(g.endedIso)} · ${loc("LOC_HTIMELINE_TURN_N", "Turn {1_T}", num(g.turns | 0))} · ${verdict(g)}`;
-}
-
-// Civilization V-style honor roll: a run's overall score earns a historical
-// world-leader title, best (index 0) to worst. The top-scoring run is crowned
-// Cincinnatus — the Roman who took absolute power only to lay it down again.
-// Pure data: reorder or reword freely, the mapping scales to the list length.
-const LEADER_LADDER = [
-  "Cincinnatus", "Augustus Caesar", "Alexander the Great", "Catherine the Great",
-  "Abraham Lincoln", "Elizabeth I", "Theodore Roosevelt", "Charlemagne",
-  "Ashoka the Great", "Winston Churchill", "Napoleon Bonaparte", "Ramesses II",
-  "Mansa Musa", "Ivan the Terrible", "Nero", "Neville Chamberlain", "Dan Quayle", "John Barron"
-];
-
-// Map a run's score (relative to the best run in the archive) onto the ladder:
-// fraction 1.0 → Cincinnatus, 0.0 → the bottom of the list.
-function worldLeader(overall, maxOverall) {
-  const frac = maxOverall > 0 ? overall / maxOverall : 0;
-  const span = LEADER_LADDER.length - 1;
-  let idx = Math.round((1 - frac) * span);
-  if (idx < 0) idx = 0;
-  if (idx > span) idx = span;
-  return LEADER_LADDER[idx];
-}
-
-function leaderTitleEl(overall, maxOverall, cls) {
-  const wrap = el("div", `htimeline-rank-worldleader ${cls || ""}`);
-  wrap.appendChild(el("span", "htimeline-wl-lbl", loc("LOC_HTIMELINE_WORLD_LEADER", "World Leader")));
-  wrap.appendChild(el("span", "htimeline-wl-name", worldLeader(overall, maxOverall)));
-  return wrap;
-}
-
-function podiumCard(b, maxOverall, onOpen) {
-  const { g, rank, overall, color } = b;
-  const card = el("div", `htimeline-rank-podium-card htimeline-rank-place-${rank}`);
-  card.style.borderColor = color;
-  const head = el("div", "htimeline-rank-podium-head");
-  head.appendChild(el("div", `htimeline-medal htimeline-medal-${rank}`, String(rank)));
-  head.appendChild(badge(statusLabel(g), statusClass(g)));
-  card.appendChild(head);
-  card.appendChild(el("div", "htimeline-rank-podium-leader", leaderOf(g) || dateStr(g.endedIso)));
-  card.appendChild(lineageSwatches(g));
-  card.appendChild(el("div", "htimeline-rank-podium-meta", metaLine(g)));
-  card.appendChild(leaderTitleEl(overall, maxOverall, "is-podium"));
-  const scoreRow = el("div", "htimeline-rank-podium-scorerow");
-  scoreRow.appendChild(el("span", "htimeline-rank-podium-score", num(overall)));
-  scoreRow.appendChild(el("span", "htimeline-rank-podium-lbl", loc("LOC_HTIMELINE_SCORE", "Score")));
-  card.appendChild(scoreRow);
-  card.appendChild(rankScoreBar(overall, maxOverall, color));
-  card.addEventListener("click", () => onOpen(g));
-  return card;
-}
-
-function rankRow(b, maxOverall, onOpen) {
-  const { g, rank, overall, color } = b;
-  const row = el("div", "htimeline-rank-row");
-  row.style.setProperty("border-left-color", color);
-  row.appendChild(el("div", "htimeline-rank-num", `#${rank}`));
-  const mid = el("div", "htimeline-rank-mid");
-  const top = el("div", "htimeline-rank-row-top");
-  top.appendChild(el("span", "htimeline-rank-leader", titleOf(g)));
-  top.appendChild(badge(statusLabel(g), statusClass(g)));
-  mid.appendChild(top);
-  mid.appendChild(lineageSwatches(g));
-  mid.appendChild(el("div", "htimeline-rank-meta", metaLine(g)));
-  mid.appendChild(leaderTitleEl(overall, maxOverall, "is-row"));
-  mid.appendChild(rankScoreBar(overall, maxOverall, color));
-  row.appendChild(mid);
-  row.appendChild(el("div", "htimeline-rank-score", num(overall)));
-  row.addEventListener("click", () => onOpen(g));
-  return row;
-}
-
-function buildBoard(games, stats) {
-  const ranked = [...games].sort(
-    (a, b) => overallScore(b, stats.maxScore, stats.maxLand) - overallScore(a, stats.maxScore, stats.maxLand)
-  );
-  return ranked.map((g, i) => ({
-    g,
-    rank: i + 1,
-    overall: overallScore(g, stats.maxScore, stats.maxLand),
-    color: primaryCivColor(g)
-  }));
-}
-
-// How many ranked runs the list shows (the podium always shows the top 3).
-const RANK_LIMIT = 25;
-
-function rankingsSplit(board, maxOverall, onOpen) {
-  const split = el("div", "htimeline-rank-split");
-  const left = el("div", "htimeline-rank-left");
-  left.appendChild(el("div", "htimeline-rank-section-title", loc("LOC_HTIMELINE_RANKINGS_PODIUM", "Top Runs")));
-  left.appendChild(el("div", "htimeline-rank-note",
-    loc("LOC_HTIMELINE_RANKINGS_NOTE", "Your past games ranked by overall score.")));
-  const podium = el("div", "htimeline-rank-podium");
-  board.slice(0, 3).forEach((b) => podium.appendChild(podiumCard(b, maxOverall, onOpen)));
-  left.appendChild(podium);
-  const right = el("div", "htimeline-rank-right");
-  right.appendChild(el("div", "htimeline-rank-section-title",
-    loc("LOC_HTIMELINE_RANKINGS_TITLE", "Civilization Rankings")));
-  const list = el("div", "htimeline-rank-list");
-  board.slice(0, RANK_LIMIT).forEach((b) => list.appendChild(rankRow(b, maxOverall, onOpen)));
-  right.appendChild(list);
-  split.appendChild(left);
-  split.appendChild(right);
-  return split;
-}
-
-export function renderRankings(host, opts = {}) {
-  host.textContent = "";
-  const games = loadArchive().games || [];
-  if (!games.length) {
-    host.appendChild(el("div", "htimeline-empty",
-      loc("LOC_HTIMELINE_ARC_EMPTY", "No past games yet — finish a game to start an archive.")));
-    return;
-  }
-  const stats = archiveStats(games);
-  const board = buildBoard(games, stats);
-  const maxOverall = Math.max(1, ...board.map((b) => b.overall));
-  const onOpen = (g) => { if (opts.onOpenGame) opts.onOpenGame(g); };
-  host.appendChild(rankingsSplit(board, maxOverall, onOpen));
 }
