@@ -3,6 +3,34 @@
 All notable changes to the Historical Timeline mod are documented here. Format
 follows Keep a Changelog; this mod adheres to semantic versioning.
 
+## [1.1.1] - 2026-07-06
+
+A code-quality and reliability release. There are **no gameplay or interface
+changes** — every screen behaves exactly as in 1.1.0 — but the archive/rankings
+code has been restructured into smaller, single-purpose modules and now ships
+with an automated test safety net, so future updates are less likely to
+regress.
+
+### Quality
+- **Archive/rankings refactor into layered modules.** The largest source file,
+  `view-archive.js` (445 lines), was split along clean seams with its behavior
+  preserved exactly: pure run logic (status, score, ranking, the world-leader
+  ladder) moved to a new dependency-free `archive-model.js`; shared presentation
+  helpers to `archive-format.js`; and the Civilization Rankings leaderboard to
+  its own `view-rankings.js`. Every module is now well under the project's
+  250-line gate, making the code easier to read, test and change safely.
+- **First automated test suite.** Added unit tests (`node --test`) covering the
+  extracted run logic — status resolution, score/land reads, ranking stats and
+  the world-leader ladder mapping — plus the runtime helpers that read live game
+  state (safe defaults when the engine globals are absent; correct age, turn,
+  player and seed when present). This is the mod's first regression coverage.
+- **Tests wired into the release gate.** `npm run verify` — the check that must
+  pass before a release build is produced — now runs the test suite alongside
+  the existing ESLint and syntax passes, so a regression can no longer ship.
+- **Clean-bill quality audit.** A full audit (lint, per-file syntax check,
+  source-structure and complexity profiling) records a passing baseline with no
+  outstanding code-quality violations.
+
 ## [1.1.0] - 2026-07-04
 
 A localization release, bringing the mod to parity with the Demographics mod's

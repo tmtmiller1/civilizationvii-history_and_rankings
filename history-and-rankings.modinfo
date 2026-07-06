@@ -6,7 +6,7 @@
         <Authors>Tower</Authors>
         <Package>HistoryAndRankingsMod</Package>
         <PackageSortIndex>1010</PackageSortIndex>
-        <Version>1.1.0</Version>
+        <Version>1.1.1</Version>
     </Properties>
     <Dependencies>
         <Mod id="base-standard" title="LOC_MODULE_BASE_STANDARD_NAME" />
@@ -48,7 +48,10 @@
                     <Item>ui/view-ribbon.js</Item>
                     <Item>ui/view-chronicle.js</Item>
                     <Item>ui/view-historical-map.js</Item>
+                    <Item>ui/archive-model.js</Item>
+                    <Item>ui/archive-format.js</Item>
                     <Item>ui/view-archive.js</Item>
+                    <Item>ui/view-rankings.js</Item>
                     <Item>ui/timeline-events.js</Item>
                     <Item>ui/chronicle-narrate.js</Item>
                     <Item>ui/timeline-scrubber.js</Item>
@@ -106,10 +109,13 @@
                     <Item>ui/timeline-events.js</Item>
                     <Item>ui/chronicle-narrate.js</Item>
                     <Item>ui/timeline-scrubber.js</Item>
+                    <Item>ui/archive-model.js</Item>
+                    <Item>ui/archive-format.js</Item>
                     <Item>ui/view-ribbon.js</Item>
                     <Item>ui/view-chronicle.js</Item>
                     <Item>ui/view-historical-map.js</Item>
                     <Item>ui/view-archive.js</Item>
+                    <Item>ui/view-rankings.js</Item>
                     <Item>ui/timeline-tooltip.js</Item>
                     <Item>ui/timeline-recap.js</Item>
                     <Item>ui/timeline-dom.js</Item>
