@@ -3,6 +3,45 @@
 All notable changes to the Historical Timeline mod are documented here. Format
 follows Keep a Changelog; this mod adheres to semantic versioning.
 
+## [Unreleased]
+
+### Fixed
+- **Defeated players are now recorded.** Elimination was never captured, so a conquered
+  player's game stayed marked "In Progress" forever and never earned a verdict, and a
+  defeated rival kept rendering as a live lane. Elimination is now derived when a player
+  drops out of the living majors, driving the dagger marker, the "Eliminated" verdict, and
+  the defeat/completed status.
+- **A just-finished game's Historical Map no longer goes missing.** The map-replay cache
+  evicted the numerically-smallest game seed instead of the oldest game, so a recent game's
+  replay could be dropped while an older one was kept. Eviction now tracks true recency.
+- **The archive Chronicle shows the leader's name, not its raw type** (e.g. "Augustus", not
+  "LEADER_AUGUSTUS").
+- **Fewer redundant per-turn captures.** Global timeline frames were recorded once per civ
+  each round; they are now recorded once per round on the local player's turn.
+
+## [1.1.2] - 2026-07-10
+
+A bug-fix release addressing two issues that could make the mod appear broken.
+
+### Fixed
+- **History & Rankings screen appeared completely blank.** Several pieces of
+  interface text (including the "no past games yet" message and the World Leader
+  titles) were styled `font-style: italic`. Civ VII's interface font engine ships
+  no italic face and does not synthesize one, so that text rendered as invisible
+  zero-size glyphs — leaving the screen looking empty even though it was drawing
+  correctly. All such text is now `font-style: normal` and displays properly.
+- **Mod name showed as `LOC_HTIMELINE_MOD_NAME` in the Mods manager.** The mod's
+  name/description localization was not being loaded early enough for the manager
+  to resolve it. Added the top-level `<LocalizedText>` block so the name and
+  description display correctly.
+
+### Known issues
+- On heavily-modded setups the cross-game archive shown at the main menu can come
+  up empty. This is a Civ VII storage limitation (browser-storage reads can return
+  the wrong value once many mods each persist data) and is tracked for a future
+  release — see `docs/backlog.md`. Your finished games are still recorded; only the
+  menu's ability to read them back is affected, and only when many mods are active.
+
 ## [1.1.1] - 2026-07-06
 
 A code-quality and reliability release. There are **no gameplay or interface

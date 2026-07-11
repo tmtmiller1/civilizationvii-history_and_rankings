@@ -9,6 +9,7 @@
 // self-owned series the archive needs. Idempotent: safe to call repeatedly.
 
 import { startSampler } from "/history-and-rankings/ui/timeline-sampler.js";
+import { localPlayerId } from "/history-and-rankings/ui/timeline-runtime.js";
 import { captureNow } from "/history-and-rankings/ui/lineage-ledger.js";
 import { captureFrame } from "/history-and-rankings/ui/timeline-history.js";
 import { maybeCaptureTerritory } from "/history-and-rankings/ui/territory-capture.js";
@@ -39,7 +40,16 @@ export function startLineageCapture() {
   try { captureNow(); } catch (_) { /* ignore */ }
   selfCapture(true);
   startSampler({
-    onTurn: () => { captureNow(); selfCapture(false); maybeFlush(); },
+    onTurn: (data) => {
+      // BL-6: PlayerTurnActivated fires once per civ; captures record GLOBAL state, so run
+      // them once per round on the local player's activation instead of N near-identical
+      // times. If the local id is unreadable, fall through (capture every activation) so
+      // nothing is missed.
+      const who = data && (data.player ?? data.Player);
+      const me = localPlayerId();
+      if (me != null && who != null && who !== me) return;
+      captureNow(); selfCapture(false); maybeFlush();
+    },
     onAge: () => { captureNow(); selfCapture(true); }
   });
 }
