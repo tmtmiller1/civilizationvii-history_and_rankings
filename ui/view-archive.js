@@ -7,7 +7,7 @@
 
 import { el } from "/history-and-rankings/ui/timeline-dom.js";
 import { loadArchive } from "/history-and-rankings/ui/timeline-store.js";
-import { civName, civColor, ageOrder } from "/history-and-rankings/ui/lineage-read.js";
+import { civName, civColor, ageOrder, leaderName } from "/history-and-rankings/ui/lineage-read.js";
 import { loc, num } from "/history-and-rankings/ui/timeline-i18n.js";
 import { renderHistoricalMap } from "/history-and-rankings/ui/view-historical-map.js";
 import {
@@ -144,7 +144,7 @@ function renderDetailChronicle(host, game) {
   const c = el("div", "htimeline-cmp-card");
   c.appendChild(el("div", "htimeline-cmp-title", loc("LOC_HTIMELINE_SUB_CHRONICLE", "Chronicle")));
   const ln = lineageStr(game);
-  c.appendChild(el("div", "htimeline-cmp-verdict", `${loc("LOC_HTIMELINE_LED", "{1_Leader} led {2_Civ}", p?.leader || "?", ln)}`));
+  c.appendChild(el("div", "htimeline-cmp-verdict", `${loc("LOC_HTIMELINE_LED", "{1_Leader} led {2_Civ}", leaderName(p?.leader), ln)}`));
   c.appendChild(el("div", "htimeline-cmp-verdict", `${loc("LOC_HTIMELINE_TURN_N", "Turn {1_T}", num(game.turns | 0))} · ${verdict(game)}`));
   c.appendChild(el("div", "htimeline-cmp-verdict", loc("LOC_HTIMELINE_ARCHIVE_CONTEXT", "This summary is reconstructed from your saved timeline recap.")));
   host.appendChild(c);

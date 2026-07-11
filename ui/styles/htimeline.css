@@ -3,7 +3,12 @@
  * A warm, parchment-on-ink palette tuned to match Civ VII's shell: muted gold
  * (#c9a24c) accents on a deep slate ground. rem-based so it tracks Interface
  * Size; aspect-ratio + max-height media match the base game for laptops/4:3.
- * All selectors are .htimeline-* scoped, so nothing leaks onto other mods. */
+ * All selectors are .htimeline-* scoped, so nothing leaks onto other mods.
+ *
+ * GOTCHA: never use `font-style: italic` OR `oblique` — BOTH render as zero-size
+ * invisible glyphs in Civ VII's Gameface (its fonts ship no slanted face and it
+ * does not synthesize a slant). Use `normal`. This once made the whole screen
+ * look entirely blank when the only visible content was an italic message. */
 
 /* Fill the screen (viewport-relative caps, NOT a rem cap that shrinks on big displays) —
  * matches the emigration/demographics screens. The short-viewport media query below opens
@@ -28,7 +33,7 @@
 .htimeline-back { color: #c9a24c; margin-right: .75rem; border-color: rgba(201,162,76,.4); }
 .htimeline-back:hover { color: #1a140a; background: rgba(201,162,76,.85); }
 
-.htimeline-empty { color: #f0dcab; font-style: italic; font-size: 1.6rem; padding: 3rem; text-align: center; }
+.htimeline-empty { color: #f0dcab; font-style: normal; font-size: 1.6rem; padding: 3rem; text-align: center; }
 
 /* ── ribbon (SVG) ──────────────────────────────────────────────────────── */
 .htimeline-ribbon-wrap { position: relative; width: 100%; }
@@ -102,7 +107,7 @@
 .htimeline-bar-track { flex: 1 1 auto; height: .6rem; background: rgba(0,0,0,.4); border-radius: .3rem; }
 .htimeline-bar-fill { height: 100%; background: #c9a24c; border-radius: .3rem; }
 .htimeline-bar-val { color: #e5d2ac; width: 3.5rem; text-align: right; font-size: .85rem; }
-.htimeline-cmp-verdict { color: #c9a24c; margin-top: .5rem; font-style: italic; }
+.htimeline-cmp-verdict { color: #c9a24c; margin-top: .5rem; font-style: normal; }
 
 .htimeline-shell-head { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; margin-bottom: .5rem; }
 .htimeline-shell-title { color: #f0dcab; font-weight: 700; }
@@ -114,7 +119,7 @@
 .htimeline-rank-left { flex: 0 0 22rem; display: flex; flex-direction: column; gap: .55rem; min-height: 0; }
 .htimeline-rank-right { flex: 1 1 auto; display: flex; flex-direction: column; gap: .4rem; min-width: 0; min-height: 0; }
 .htimeline-rank-section-title { color: #f0dcab; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; font-size: 1.05rem; }
-.htimeline-rank-note { color: #b9a574; font-style: italic; font-size: .82rem; line-height: 1.35; }
+.htimeline-rank-note { color: #b9a574; font-style: normal; font-size: .82rem; line-height: 1.35; }
 
 .htimeline-rank-podium { display: flex; flex-direction: column; gap: .5rem; }
 .htimeline-rank-podium-card { background: rgba(20,24,33,.6); border: .08rem solid rgba(201,162,76,.45); border-radius: .45rem; padding: .55rem .7rem; cursor: pointer; display: flex; flex-direction: column; gap: .35rem; transition: background .12s; }
@@ -152,12 +157,12 @@
 /* ── world-leader honorific (Civ V-style score title) ──────────────────────── */
 .htimeline-rank-worldleader { display: flex; align-items: baseline; gap: .4rem; }
 .htimeline-wl-lbl { color: #a89a7a; font-size: .64rem; text-transform: uppercase; letter-spacing: .06em; }
-.htimeline-wl-name { color: #d8b15a; font-weight: 700; font-style: italic; }
+.htimeline-wl-name { color: #d8b15a; font-weight: 700; font-style: normal; }
 .htimeline-rank-worldleader.is-podium { margin: .2rem 0 .15rem; }
 .htimeline-rank-worldleader.is-podium .htimeline-wl-name { font-size: 1.06rem; }
 .htimeline-rank-worldleader.is-row { margin: .12rem 0; }
 .htimeline-rank-worldleader.is-row .htimeline-wl-name { font-size: .94rem; }
-.htimeline-shell-pill-leader { color: #d8b15a; font-style: italic; }
+.htimeline-shell-pill-leader { color: #d8b15a; font-style: normal; }
 
 /* ── map legend (terrain key + civ colors) ─────────────────────────────────── */
 .htimeline-map-legend { display: flex; flex-direction: column; gap: .35rem; padding: .6rem .2rem .2rem; flex: 0 0 auto; }

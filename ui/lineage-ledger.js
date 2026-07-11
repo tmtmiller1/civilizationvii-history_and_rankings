@@ -48,10 +48,34 @@ export function captureNow() {
   const turn = gameTurn();
   if (!age) return false;
   let changed = false;
-  for (const pid of aliveMajorIds()) {
+  const alive = aliveMajorIds();
+  for (const pid of alive) {
     if (foldPlayer(led, pid, age, turn)) changed = true;
   }
+  if (deriveEliminations(led, alive, turn)) changed = true;
   if (changed) writeJSON(KEY, led);
+  return changed;
+}
+
+/**
+ * Record elimination for any major that appeared in the ledger (so it was alive at some
+ * capture) but is no longer among the alive majors — no player-defeat engine event is wired,
+ * so it's derived here. Skipped when the alive list is empty (a transient/unreadable state
+ * that must not stamp every player as eliminated). Idempotent: `eliminatedTurn` is set once.
+ * @param {*} led The ledger. @param {number[]} alive Current alive-major ids. @param {number} turn Current turn.
+ * @returns {boolean} True if any elimination was newly recorded.
+ */
+function deriveEliminations(led, alive, turn) {
+  if (!Array.isArray(alive) || alive.length === 0) return false;
+  const aliveSet = new Set(alive.map(Number));
+  let changed = false;
+  for (const key of Object.keys(led.players)) {
+    const p = led.players[key];
+    if (p && p.eliminatedTurn == null && !aliveSet.has(Number(key))) {
+      p.eliminatedTurn = turn;
+      changed = true;
+    }
+  }
   return changed;
 }
 

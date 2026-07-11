@@ -125,9 +125,16 @@ export function saveGameMap(id, map) {
   const data = readData();
   const maps = (data.maps && typeof data.maps === "object") ? data.maps : {};
   maps[String(id)] = map;
-  const keys = Object.keys(maps);
-  while (keys.length > MAP_KEEP) { delete maps[keys.shift()]; }
+  // Evict by recency, not key iteration order. Keys are String(gameSeed); Object.keys sorts
+  // numerically, so the old `keys.shift()` dropped the smallest seed, not the oldest game
+  // (a just-finished game's replay could vanish). Track newest-first insertion instead;
+  // seed from existing keys on first run so legacy stores (no mapOrder) don't lose replays.
+  let order = Array.isArray(data.mapOrder) ? data.mapOrder.slice() : Object.keys(maps);
+  order = order.filter((k) => k !== String(id) && maps[k] !== undefined);
+  order.unshift(String(id));
+  while (order.length > MAP_KEEP) { delete maps[order.pop()]; }
   data.maps = maps;
+  data.mapOrder = order;
   return writeData(data);
 }
 
