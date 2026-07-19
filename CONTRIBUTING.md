@@ -36,7 +36,7 @@ When a function trips a limit, prefer extracting a small, named helper or a cont
 
 ## Conventions
 
-- **Defensive engine access.** The GameFace API surface can be absent or throw (`Configuration`, `UI.Player`, `GameplayMap`, etc. may be undefined). Guard with `typeof X !== "undefined"` and degrade gracefully — never assume an engine global exists. Bad canvas commands (invalid color strings, too many ops) can crash the renderer thread uncatchably, so sanitize colors before painting the minimap.
+- **Defensive engine access.** The GameFace API surface can be absent or throw (`Configuration`, `UI.Player`, `GameplayMap`, etc. may be undefined). Guard with `typeof X !== "undefined"` and fall back cleanly — never assume an engine global exists. Bad canvas commands (invalid color strings, too many ops) can crash the renderer thread uncatchably, so sanitize colors before painting the minimap.
 - **Persistence.** The games archive and per-run map replays are stored under a **single** `localStorage` key (`htlData`) — never add a second top-level `localStorage` key, as the engine wipes all of `localStorage` when a mod creates more than one. Per-game scratch data uses the GameConfiguration KV store (`Configuration.editGame().setValue` / `getGame().getValue`) under the `HistoricalTimeline__` namespace.
 - **Isolates.** UIScripts run in separate V8 isolates (menu vs in-game); module caches do not share across contexts, so the reader must reload from persistence rather than trust an in-memory cache.
 - **GameFace quirks.** The renderer rejects `hsl()` and `display:grid`/`1fr` — use hex colors and flexbox. Civ colors come from `UI.Player.getPrimaryColorValueAsString(playerId)`; the unique per-game id is `Configuration.getGame().gameSeed`.
