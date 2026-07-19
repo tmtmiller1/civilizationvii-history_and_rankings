@@ -104,8 +104,8 @@ and displayed numbers now format for the player's language.
 
 ## [1.0.0]
 
-A post-game **History & Rankings** companion — in the spirit of Civilization V's
-beloved replay screen — reachable from the main menu and from the in-game timeline.
+A post-game **History & Rankings** companion, in the spirit of Civilization V's
+replay screen, reachable from the main menu and from the in-game timeline.
 
 ### Added
 - **Civilization Rankings** — your past games as a leaderboard: a gold/silver/bronze
