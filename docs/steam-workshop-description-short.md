@@ -15,9 +15,9 @@ A post-game archive and leaderboard. Every finished game is saved to a persisten
 
 [b]What The Mod Does Not Do:[/b]
 [list]
-[*]It does not change gameplay balance.
-[*]It does not alter opponent behavior.
-[*]It does not overwrite base-game files.
+[*]Gameplay balance is left untouched.
+[*]Rival AI behaves exactly as it would without the mod.
+[*]No base-game files are replaced or overwritten.
 [/list]
 
 [b]Compatibility:[/b]
